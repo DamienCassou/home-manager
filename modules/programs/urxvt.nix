@@ -124,7 +124,7 @@ in {
 
     extraConfig = mkOption {
       default = { };
-      type = types.attrsOf types.anything;
+      type = types.attrs;
       description = "Additional configuration to add.";
       example = { "shading" = 15; };
     };

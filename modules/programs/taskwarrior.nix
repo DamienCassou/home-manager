@@ -40,7 +40,7 @@ in {
       enable = mkEnableOption "Task Warrior";
 
       config = mkOption {
-        type = types.attrsOf types.anything;
+        type = types.attrs;
         default = { };
         example = literalExample ''
           {
