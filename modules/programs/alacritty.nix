@@ -3,8 +3,9 @@
 with lib;
 
 let
+
   cfg = config.programs.alacritty;
-  yamlFormat = pkgs.formats.yaml { };
+
 in {
   options = {
     programs.alacritty = {
@@ -18,7 +19,7 @@ in {
       };
 
       settings = mkOption {
-        type = yamlFormat.type;
+        type = types.attrs;
         default = { };
         example = literalExample ''
           {
@@ -50,11 +51,6 @@ in {
       home.packages = [ cfg.package ];
 
       xdg.configFile."alacritty/alacritty.yml" = mkIf (cfg.settings != { }) {
-        # TODO: Replace by the generate function but need to figure out how to
-        # handle the escaping first.
-        #
-        # source = yamlFormat.generate "alacritty.yml" cfg.settings;
-
         text =
           replaceStrings [ "\\\\" ] [ "\\" ] (builtins.toJSON cfg.settings);
       };

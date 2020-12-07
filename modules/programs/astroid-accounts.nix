@@ -16,7 +16,7 @@ with lib;
     };
 
     extraConfig = mkOption {
-      type = types.attrsOf types.anything;
+      type = types.attrs;
       default = { };
       example = { select_query = ""; };
       description = ''
