@@ -5,8 +5,16 @@ with lib;
 let
 
   cfg = config.programs.direnv;
-
-  tomlFormat = pkgs.formats.toml { };
+  configFile = config:
+    pkgs.runCommand "config.toml" {
+      buildInputs = [ pkgs.remarshal ];
+      preferLocalBuild = true;
+      allowSubstitutes = false;
+    } ''
+      remarshal -if json -of toml \
+        < ${pkgs.writeText "config.json" (builtins.toJSON config)} \
+        > $out
+    '';
 
 in {
   meta.maintainers = [ maintainers.rycee ];
@@ -15,7 +23,7 @@ in {
     enable = mkEnableOption "direnv, the environment switcher";
 
     config = mkOption {
-      type = tomlFormat.type;
+      type = types.attrs;
       default = { };
       description = ''
         Configuration written to
@@ -72,9 +80,8 @@ in {
   config = mkIf cfg.enable {
     home.packages = [ pkgs.direnv ];
 
-    xdg.configFile."direnv/config.toml" = mkIf (cfg.config != { }) {
-      source = tomlFormat.generate "direnv-config" cfg.config;
-    };
+    xdg.configFile."direnv/config.toml" =
+      mkIf (cfg.config != { }) { source = configFile cfg.config; };
 
     xdg.configFile."direnv/direnvrc" = let
       text = concatStringsSep "\n" (optional (cfg.stdlib != "") cfg.stdlib
