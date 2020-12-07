@@ -6,8 +6,6 @@ let
 
   cfg = config.programs.beets;
 
-  yamlFormat = pkgs.formats.yaml { };
-
 in {
   meta.maintainers = [ maintainers.rycee ];
 
@@ -41,7 +39,7 @@ in {
       };
 
       settings = mkOption {
-        type = yamlFormat.type;
+        type = types.attrs;
         default = { };
         description = ''
           Configuration written to
@@ -54,7 +52,7 @@ in {
   config = mkIf cfg.enable {
     home.packages = [ cfg.package ];
 
-    xdg.configFile."beets/config.yaml".source =
-      yamlFormat.generate "beets-config" cfg.settings;
+    xdg.configFile."beets/config.yaml".text =
+      builtins.toJSON config.programs.beets.settings;
   };
 }

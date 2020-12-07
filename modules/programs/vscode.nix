@@ -8,8 +8,6 @@ let
 
   vscodePname = cfg.package.pname;
 
-  jsonFormat = pkgs.formats.json { };
-
   configDir = {
     "vscode" = "Code";
     "vscode-insiders" = "Code - Insiders";
@@ -48,7 +46,7 @@ in {
       };
 
       userSettings = mkOption {
-        type = jsonFormat.type;
+        type = types.attrs;
         default = { };
         example = literalExample ''
           {
@@ -78,18 +76,10 @@ in {
             };
 
             when = mkOption {
-              type = types.nullOr (types.str);
-              default = null;
+              type = types.str;
+              default = "";
               example = "textInputFocus";
               description = "Optional context filter.";
-            };
-
-            # https://code.visualstudio.com/docs/getstarted/keybindings#_command-arguments
-            args = mkOption {
-              type = types.nullOr (types.attrs);
-              default = null;
-              example = { direction = "up"; };
-              description = "Optional arguments for a command.";
             };
           };
         });
@@ -133,14 +123,12 @@ in {
         (k: _: { "${extensionPath}/${k}".source = "${path}/${subDir}/${k}"; })
         (builtins.readDir (path + "/${subDir}"));
       toSymlink = concatMap toPaths cfg.extensions;
-      dropNullFields = filterAttrs (_: v: v != null);
     in foldr (a: b: a // b) {
       "${configFilePath}" = mkIf (cfg.userSettings != { }) {
-        source = jsonFormat.generate "vscode-user-settings" cfg.userSettings;
+        text = builtins.toJSON cfg.userSettings;
       };
       "${keybindingsFilePath}" = mkIf (cfg.keybindings != [ ]) {
-        source = jsonFormat.generate "vscode-keybindings"
-          (map dropNullFields cfg.keybindings);
+        text = builtins.toJSON cfg.keybindings;
       };
     } toSymlink;
   };
