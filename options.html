@@ -4515,6 +4515,12 @@ timeout, set it to zero.
         0
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/mako.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/mako.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mako.extraConfig"></a><a class="term" href="options.html#opt-programs.mako.extraConfig"><code class="option">programs.mako.extraConfig</code></a></span></dt><dd><p>Additional configuration.</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[urgency=low]
+border-color=#b8bb26
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/mako.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/mako.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mako.font"></a><a class="term" href="options.html#opt-programs.mako.font"><code class="option">programs.mako.font</code></a></span></dt><dd><p>Font to use, in Pango format.
 </p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "monospace 10"
@@ -4739,6 +4745,11 @@ control the default matplotlib behavior.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mcfly.enableFishIntegration"></a><a class="term" href="options.html#opt-programs.mcfly.enableFishIntegration"><code class="option">programs.mcfly.enableFishIntegration</code></a></span></dt><dd><p>Whether to enable Fish integration.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mcfly.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/mcfly.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mcfly.enableFuzzySearch"></a><a class="term" href="options.html#opt-programs.mcfly.enableFuzzySearch"><code class="option">programs.mcfly.enableFuzzySearch</code></a></span></dt><dd><p>Whether to enable fuzzy searching.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mcfly.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mcfly.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.mcfly.enableLightTheme"></a><a class="term" href="options.html#opt-programs.mcfly.enableLightTheme"><code class="option">programs.mcfly.enableLightTheme</code></a></span></dt><dd><p>Whether to enable light mode theme.
@@ -6126,6 +6137,32 @@ should be used whenever possible.
         400
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.pass.enable"></a><a class="term" href="options.html#opt-programs.rofi.pass.enable"><code class="option">programs.rofi.pass.enable</code></a></span></dt><dd><p>Whether to enable rofi integration with password-store.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi-pass.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/rofi-pass.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.pass.extraConfig"></a><a class="term" href="options.html#opt-programs.rofi.pass.extraConfig"><code class="option">programs.rofi.pass.extraConfig</code></a></span></dt><dd><p>Extra configuration to be added at to the rofi-pass config file.
+Additional examples can be found at
+<a class="link" href="https://github.com/carnager/rofi-pass/blob/master/config.example" target="_top">https://github.com/carnager/rofi-pass/blob/master/config.example</a>.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+URL_field='url'
+USERNAME_field='user'
+AUTOTYPE_field='autotype'
+''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi-pass.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/rofi-pass.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.pass.stores"></a><a class="term" href="options.html#opt-programs.rofi.pass.stores"><code class="option">programs.rofi.pass.stores</code></a></span></dt><dd><p>Directory roots of your password-stores.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi-pass.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/rofi-pass.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.rowHeight"></a><a class="term" href="options.html#opt-programs.rofi.rowHeight"><code class="option">programs.rofi.rowHeight</code></a></span></dt><dd><p>Row height (in chars)</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -6637,7 +6674,12 @@ of options.
     
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
   add_newline = false;
-  prompt_order = [ "line_break" "package" "line_break" "character" ];
+  format = lib.concatStrings [
+    "$line_break"
+    "$package"
+    "$line_break"
+    "$character"
+  ];
   scan_timeout = 10;
   character.symbol = "➜";
 }
@@ -7032,6 +7074,13 @@ run at the top of your configuration.
   }
 ]
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/tmux.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/tmux.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.tmux.prefix"></a><a class="term" href="options.html#opt-programs.tmux.prefix"><code class="option">programs.tmux.prefix</code></a></span></dt><dd><p>Set the prefix key. Overrules the "shortcut" option when set.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "C-a"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/tmux.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/tmux.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.tmux.resizeAmount"></a><a class="term" href="options.html#opt-programs.tmux.resizeAmount"><code class="option">programs.tmux.resizeAmount</code></a></span></dt><dd><p>Number of lines/columns when resizing.</p><p><span class="emphasis"><em>Type:</em></span> positive integer, meaning &gt;0</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         5
