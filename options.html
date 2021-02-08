@@ -556,6 +556,14 @@ some others, because they will hide channel names that are the same.
         "imap"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/mbsync.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.mbsync.subFolders"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.mbsync.subFolders"><code class="option">accounts.email.accounts.&lt;name&gt;.mbsync.subFolders</code></a></span></dt><dd><p>The on-disk folder naming style. This option has no
+effect when <code class="option">flatten</code> is used.
+</p><p><span class="emphasis"><em>Type:</em></span> one of "Verbatim", "Maildir++", "Legacy"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "Verbatim"
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "Maildir++"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mbsync.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/mbsync.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.msmtp.enable"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.msmtp.enable"><code class="option">accounts.email.accounts.&lt;name&gt;.msmtp.enable</code></a></span></dt><dd><p>Whether to enable msmtp.
 </p><p>
 If enabled then it is possible to use the
@@ -1257,7 +1265,7 @@ settings are in effect and will therefore help avoid breaking
 program configurations. Switching to a higher state version
 typically requires performing some manual steps, such as data
 conversion or moving files.
-</p><p><span class="emphasis"><em>Type:</em></span> one of "18.09", "19.03", "19.09", "20.03", "20.09", "21.03"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> one of "18.09", "19.03", "19.09", "20.03", "20.09", "21.03", "21.05"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "18.09"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/version.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/version.nix&gt;
@@ -6190,7 +6198,7 @@ should be used whenever possible.
         null
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.extraConfig"></a><a class="term" href="options.html#opt-programs.rofi.extraConfig"><code class="option">programs.rofi.extraConfig</code></a></span></dt><dd><p>Additional configuration to add.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of signed integer or string or booleans</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.extraConfig"></a><a class="term" href="options.html#opt-programs.rofi.extraConfig"><code class="option">programs.rofi.extraConfig</code></a></span></dt><dd><p>Additional configuration to add.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of string or signed integer or boolean or Rasi literal string or list of string or signed integer or boolean or Rasi literal stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
         
@@ -6278,14 +6286,33 @@ AUTOTYPE_field='autotype'
         "\${pkgs.gnome3.gnome_terminal}/bin/gnome-terminal"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.theme"></a><a class="term" href="options.html#opt-programs.rofi.theme"><code class="option">programs.rofi.theme</code></a></span></dt><dd><p>Name of theme or path to theme file in rasi format. Available
-named themes can be viewed using the
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.theme"></a><a class="term" href="options.html#opt-programs.rofi.theme"><code class="option">programs.rofi.theme</code></a></span></dt><dd><p>Name of theme or path to theme file in rasi format or attribute set with
+theme configuration. Available named themes can be viewed using the
 <span class="command"><strong>rofi-theme-selector</strong></span> tool.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string or path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> null or string or path or attribute set of attribute set of string or signed integer or boolean or Rasi literal string or list of string or signed integer or boolean or Rasi literal stringsss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        "Arc"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">let
+  inherit (config.lib.formats.rasi) mkLiteral;
+in {
+  "*" = {
+    background-color = mkLiteral "#000000";
+    foreground-color = mkLiteral "rgba ( 250, 251, 252, 100 % )";
+    border-color = mkLiteral "#FFFFFF";
+    width = 512;
+  };
+
+  "#inputbar" = {
+    children = map mkLiteral [ "prompt" "entry" ];
+  };
+
+  "#textbox-prompt-colon" = {
+    expand = false;
+    str = ":";
+    margin = mkLiteral "0px 0.3em 0em 0em";
+    text-color = mkLiteral "@foreground-color";
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.width"></a><a class="term" href="options.html#opt-programs.rofi.width"><code class="option">programs.rofi.width</code></a></span></dt><dd><p>Window width</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
@@ -6317,6 +6344,72 @@ for explanation about possible values.
         ""
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rtorrent.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rtorrent.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.enable"></a><a class="term" href="options.html#opt-programs.sbt.enable"><code class="option">programs.sbt.enable</code></a></span></dt><dd><p>Whether to enable sbt.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.package"></a><a class="term" href="options.html#opt-programs.sbt.package"><code class="option">programs.sbt.package</code></a></span></dt><dd><p>The package with sbt to be installed.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.sbt
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.baseConfigPath"></a><a class="term" href="options.html#opt-programs.sbt.baseConfigPath"><code class="option">programs.sbt.baseConfigPath</code></a></span></dt><dd><p>Where the plugins and credentials should be located.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ".sbt/1.0"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.credentials"></a><a class="term" href="options.html#opt-programs.sbt.credentials"><code class="option">programs.sbt.credentials</code></a></span></dt><dd><p>A list of credentials to define in the sbt configuration directory.
+</p><p><span class="emphasis"><em>Type:</em></span> list of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[{
+  realm = "Sonatype Nexus Repository Manager";
+  host = "example.com";
+  user = "user";
+  passwordCommand = "pass show sbt/user@example.com";
+}]
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.credentials._.host"></a><a class="term" href="options.html#opt-programs.sbt.credentials._.host"><code class="option">programs.sbt.credentials.*.host</code></a></span></dt><dd><p>The hostname of the repository you're authenticating to.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.credentials._.passwordCommand"></a><a class="term" href="options.html#opt-programs.sbt.credentials._.passwordCommand"><code class="option">programs.sbt.credentials.*.passwordCommand</code></a></span></dt><dd><p>The command that provides the password or authentication token for
+the repository.
+</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.credentials._.realm"></a><a class="term" href="options.html#opt-programs.sbt.credentials._.realm"><code class="option">programs.sbt.credentials.*.realm</code></a></span></dt><dd><p>The realm of the repository you're authenticating to.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.credentials._.user"></a><a class="term" href="options.html#opt-programs.sbt.credentials._.user"><code class="option">programs.sbt.credentials.*.user</code></a></span></dt><dd><p>The user you're using to authenticate.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.plugins"></a><a class="term" href="options.html#opt-programs.sbt.plugins"><code class="option">programs.sbt.plugins</code></a></span></dt><dd><p>A list of plugins to place in the sbt configuration directory.
+</p><p><span class="emphasis"><em>Type:</em></span> list of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[
+  {
+    org = "net.virtual-void";
+    artifact = "sbt-dependency-graph";
+    version = "0.10.0-RC1";
+  }
+  {
+    org = "com.dwijnand";
+    artifact = "sbt-project-graph";
+    version = "0.4.0";
+  }
+]
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.plugins._.artifact"></a><a class="term" href="options.html#opt-programs.sbt.plugins._.artifact"><code class="option">programs.sbt.plugins.*.artifact</code></a></span></dt><dd><p>The name of the artifact.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.plugins._.org"></a><a class="term" href="options.html#opt-programs.sbt.plugins._.org"><code class="option">programs.sbt.plugins.*.org</code></a></span></dt><dd><p>The organization the artifact is published under.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.plugins._.version"></a><a class="term" href="options.html#opt-programs.sbt.plugins._.version"><code class="option">programs.sbt.plugins.*.version</code></a></span></dt><dd><p>The version of the plugin.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/sbt.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.skim.enable"></a><a class="term" href="options.html#opt-programs.skim.enable"><code class="option">programs.skim.enable</code></a></span></dt><dd><p>Whether to enable skim - a command-line fuzzy finder.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -8685,88 +8778,93 @@ else pkgs.emacs
         "\${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/fluidsynth.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/fluidsynth.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.enable"></a><a class="term" href="options.html#opt-services.gammastep.enable"><code class="option">services.gammastep.enable</code></a></span></dt><dd><p>Enable Gammastep to change your screen's colour temperature depending on
-the time of day.
-</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.enable"></a><a class="term" href="options.html#opt-services.gammastep.enable"><code class="option">services.gammastep.enable</code></a></span></dt><dd><p>Whether to enable Gammastep.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.package"></a><a class="term" href="options.html#opt-services.gammastep.package"><code class="option">services.gammastep.package</code></a></span></dt><dd><p>gammastep derivation to use.
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.package"></a><a class="term" href="options.html#opt-services.gammastep.package"><code class="option">services.gammastep.package</code></a></span></dt><dd><p>Gammastep derivation to use.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         pkgs.gammastep
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.brightness.day"></a><a class="term" href="options.html#opt-services.gammastep.brightness.day"><code class="option">services.gammastep.brightness.day</code></a></span></dt><dd><p>Screen brightness to apply during the day,
-between <code class="literal">0.1</code> and <code class="literal">1.0</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "1"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.brightness.night"></a><a class="term" href="options.html#opt-services.gammastep.brightness.night"><code class="option">services.gammastep.brightness.night</code></a></span></dt><dd><p>Screen brightness to apply during the night,
-between <code class="literal">0.1</code> and <code class="literal">1.0</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "1"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.extraOptions"></a><a class="term" href="options.html#opt-services.gammastep.extraOptions"><code class="option">services.gammastep.extraOptions</code></a></span></dt><dd><p>Additional command-line arguments to pass to
-<span class="command"><strong>gammastep</strong></span>.
-</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        
-        [
-        
-        ]
-    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.dawnTime"></a><a class="term" href="options.html#opt-services.gammastep.dawnTime"><code class="option">services.gammastep.dawnTime</code></a></span></dt><dd><p>Set the time interval of dawn manually.
+The times must be specified as HH:MM in 24-hour format.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        
-        [
-        "-v" "-m randr" 
-        ]
-    
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
+        "6:00-7:45"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.duskTime"></a><a class="term" href="options.html#opt-services.gammastep.duskTime"><code class="option">services.gammastep.duskTime</code></a></span></dt><dd><p>Set the time interval of dusk manually.
+The times must be specified as HH:MM in 24-hour format.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "18:35-20:15"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.latitude"></a><a class="term" href="options.html#opt-services.gammastep.latitude"><code class="option">services.gammastep.latitude</code></a></span></dt><dd><p>Your current latitude, between <code class="literal">-90.0</code> and
 <code class="literal">90.0</code>. Must be provided along with
 longitude.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> null or string or floating point number</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.longitude"></a><a class="term" href="options.html#opt-services.gammastep.longitude"><code class="option">services.gammastep.longitude</code></a></span></dt><dd><p>Your current longitude, between <code class="literal">-180.0</code> and
 <code class="literal">180.0</code>. Must be provided along with
 latitude.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> null or string or floating point number</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.provider"></a><a class="term" href="options.html#opt-services.gammastep.provider"><code class="option">services.gammastep.provider</code></a></span></dt><dd><p>The location provider to use for determining your location. If set to
 <code class="literal">manual</code> you must also provide latitude/longitude.
 If set to <code class="literal">geoclue2</code>, you must also enable the global
 geoclue2 service.
 </p><p><span class="emphasis"><em>Type:</em></span> one of "manual", "geoclue2"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "manual"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.settings"></a><a class="term" href="options.html#opt-services.gammastep.settings"><code class="option">services.gammastep.settings</code></a></span></dt><dd><p>The configuration to pass to Gammastep.
+Available options for Gammastep described in
+<span class="citerefentry"><span class="refentrytitle">gammastep</span>(1)</span>.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of INI atom (null, bool, int, float or string)ss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  general = {
+    adjustment-method = "randr";
+  };
+  randr = {
+    screen = 0;
+  };
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.temperature.day"></a><a class="term" href="options.html#opt-services.gammastep.temperature.day"><code class="option">services.gammastep.temperature.day</code></a></span></dt><dd><p>Colour temperature to use during the day, between
 <code class="literal">1000</code> and <code class="literal">25000</code> K.
 </p><p><span class="emphasis"><em>Type:</em></span> signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         5500
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.temperature.night"></a><a class="term" href="options.html#opt-services.gammastep.temperature.night"><code class="option">services.gammastep.temperature.night</code></a></span></dt><dd><p>Colour temperature to use at night, between
 <code class="literal">1000</code> and <code class="literal">25000</code> K.
 </p><p><span class="emphasis"><em>Type:</em></span> signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         3700
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.tray"></a><a class="term" href="options.html#opt-services.gammastep.tray"><code class="option">services.gammastep.tray</code></a></span></dt><dd><p>Start the gammastep-indicator tray applet.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/gammastep.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/gammastep.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/gammastep.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/gammastep.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.getmail.enable"></a><a class="term" href="options.html#opt-services.getmail.enable"><code class="option">services.getmail.enable</code></a></span></dt><dd><p>Whether to enable the getmail systemd service to automatically retrieve mail.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -9695,6 +9793,16 @@ man page for more examples.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/plan9port.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/plan9port.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.playerctld.enable"></a><a class="term" href="options.html#opt-services.playerctld.enable"><code class="option">services.playerctld.enable</code></a></span></dt><dd><p>Whether to enable playerctld daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/playerctld.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/playerctld.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.playerctld.package"></a><a class="term" href="options.html#opt-services.playerctld.package"><code class="option">services.playerctld.package</code></a></span></dt><dd><p>The playerctl package to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.playerctl
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/playerctld.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/playerctld.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.polybar.enable"></a><a class="term" href="options.html#opt-services.polybar.enable"><code class="option">services.polybar.enable</code></a></span></dt><dd><p>Whether to enable Polybar status bar.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -9811,88 +9919,93 @@ as a duration understood by systemd.
         "1h"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/random-background.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/random-background.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.enable"></a><a class="term" href="options.html#opt-services.redshift.enable"><code class="option">services.redshift.enable</code></a></span></dt><dd><p>Enable Redshift to change your screen's colour temperature depending on
-the time of day.
-</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.enable"></a><a class="term" href="options.html#opt-services.redshift.enable"><code class="option">services.redshift.enable</code></a></span></dt><dd><p>Whether to enable Redshift.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.package"></a><a class="term" href="options.html#opt-services.redshift.package"><code class="option">services.redshift.package</code></a></span></dt><dd><p>redshift derivation to use.
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.package"></a><a class="term" href="options.html#opt-services.redshift.package"><code class="option">services.redshift.package</code></a></span></dt><dd><p>Redshift derivation to use.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         pkgs.redshift
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.brightness.day"></a><a class="term" href="options.html#opt-services.redshift.brightness.day"><code class="option">services.redshift.brightness.day</code></a></span></dt><dd><p>Screen brightness to apply during the day,
-between <code class="literal">0.1</code> and <code class="literal">1.0</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "1"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.brightness.night"></a><a class="term" href="options.html#opt-services.redshift.brightness.night"><code class="option">services.redshift.brightness.night</code></a></span></dt><dd><p>Screen brightness to apply during the night,
-between <code class="literal">0.1</code> and <code class="literal">1.0</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        "1"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.extraOptions"></a><a class="term" href="options.html#opt-services.redshift.extraOptions"><code class="option">services.redshift.extraOptions</code></a></span></dt><dd><p>Additional command-line arguments to pass to
-<span class="command"><strong>redshift</strong></span>.
-</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        
-        [
-        
-        ]
-    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.dawnTime"></a><a class="term" href="options.html#opt-services.redshift.dawnTime"><code class="option">services.redshift.dawnTime</code></a></span></dt><dd><p>Set the time interval of dawn manually.
+The times must be specified as HH:MM in 24-hour format.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        
-        [
-        "-v" "-m randr" 
-        ]
-    
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
+        "6:00-7:45"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.duskTime"></a><a class="term" href="options.html#opt-services.redshift.duskTime"><code class="option">services.redshift.duskTime</code></a></span></dt><dd><p>Set the time interval of dusk manually.
+The times must be specified as HH:MM in 24-hour format.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "18:35-20:15"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.latitude"></a><a class="term" href="options.html#opt-services.redshift.latitude"><code class="option">services.redshift.latitude</code></a></span></dt><dd><p>Your current latitude, between <code class="literal">-90.0</code> and
 <code class="literal">90.0</code>. Must be provided along with
 longitude.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> null or string or floating point number</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.longitude"></a><a class="term" href="options.html#opt-services.redshift.longitude"><code class="option">services.redshift.longitude</code></a></span></dt><dd><p>Your current longitude, between <code class="literal">-180.0</code> and
 <code class="literal">180.0</code>. Must be provided along with
 latitude.
-</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> null or string or floating point number</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         null
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.provider"></a><a class="term" href="options.html#opt-services.redshift.provider"><code class="option">services.redshift.provider</code></a></span></dt><dd><p>The location provider to use for determining your location. If set to
 <code class="literal">manual</code> you must also provide latitude/longitude.
 If set to <code class="literal">geoclue2</code>, you must also enable the global
 geoclue2 service.
 </p><p><span class="emphasis"><em>Type:</em></span> one of "manual", "geoclue2"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "manual"
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.settings"></a><a class="term" href="options.html#opt-services.redshift.settings"><code class="option">services.redshift.settings</code></a></span></dt><dd><p>The configuration to pass to Redshift.
+Available options for Redshift described in
+<span class="citerefentry"><span class="refentrytitle">redshift</span>(1)</span>.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of INI atom (null, bool, int, float or string)ss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  redshift = {
+    adjustment-method = "randr";
+  };
+  randr = {
+    screen = 0;
+  };
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.temperature.day"></a><a class="term" href="options.html#opt-services.redshift.temperature.day"><code class="option">services.redshift.temperature.day</code></a></span></dt><dd><p>Colour temperature to use during the day, between
 <code class="literal">1000</code> and <code class="literal">25000</code> K.
 </p><p><span class="emphasis"><em>Type:</em></span> signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         5500
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.temperature.night"></a><a class="term" href="options.html#opt-services.redshift.temperature.night"><code class="option">services.redshift.temperature.night</code></a></span></dt><dd><p>Colour temperature to use at night, between
 <code class="literal">1000</code> and <code class="literal">25000</code> K.
 </p><p><span class="emphasis"><em>Type:</em></span> signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         3700
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.redshift.tray"></a><a class="term" href="options.html#opt-services.redshift.tray"><code class="option">services.redshift.tray</code></a></span></dt><dd><p>Start the redshift-gtk tray applet.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/redshift.nix&gt;
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/redshift-gammastep/redshift.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/redshift-gammastep/redshift.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.rsibreak.enable"></a><a class="term" href="options.html#opt-services.rsibreak.enable"><code class="option">services.rsibreak.enable</code></a></span></dt><dd><p>Whether to enable rsibreak.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -9951,7 +10064,7 @@ Can be used to specify extensions.
         pkgs.spotifyd
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">(pkgs.spotifyd.override { withKeyring = true; })</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/spotifyd.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/spotifyd.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.spotifyd.settings"></a><a class="term" href="options.html#opt-services.spotifyd.settings"><code class="option">services.spotifyd.settings</code></a></span></dt><dd><p>Configuration for spotifyd</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.spotifyd.settings"></a><a class="term" href="options.html#opt-services.spotifyd.settings"><code class="option">services.spotifyd.settings</code></a></span></dt><dd><p>Configuration for spotifyd</p><p><span class="emphasis"><em>Type:</em></span> TOML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
         
