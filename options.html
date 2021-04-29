@@ -3319,9 +3319,21 @@ or checksum database.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gpg.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gpg.package"></a><a class="term" href="options.html#opt-programs.gpg.package"><code class="option">programs.gpg.package</code></a></span></dt><dd><p>The Gnupg package to use (also used the gpg-agent service).</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.gnupg
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.gnupg23</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/gpg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gpg.homedir"></a><a class="term" href="options.html#opt-programs.gpg.homedir"><code class="option">programs.gpg.homedir</code></a></span></dt><dd><p>Directory to store keychains and configuration.</p><p><span class="emphasis"><em>Type:</em></span> path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "${config.home.homeDirectory}/.gnupg"
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">"${config.xdg.dataHome}/gnupg"</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/gpg.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gpg.scdaemonSettings"></a><a class="term" href="options.html#opt-programs.gpg.scdaemonSettings"><code class="option">programs.gpg.scdaemonSettings</code></a></span></dt><dd><p>SCdaemon configuration options. Available options are described
+in the gpg scdaemon manpage:
+<a class="link" href="https://www.gnupg.org/documentation/manuals/gnupg/Scdaemon-Options.html" target="_top">https://www.gnupg.org/documentation/manuals/gnupg/Scdaemon-Options.html</a>.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of string or boolean or list of stringss</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  disable-ccid = true;
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gpg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gpg.settings"></a><a class="term" href="options.html#opt-programs.gpg.settings"><code class="option">programs.gpg.settings</code></a></span></dt><dd><p>GnuPG configuration options. Available options are described
 in the gpg manpage:
@@ -6487,7 +6499,8 @@ the repository.
                     &lt;home-manager/modules/programs/sbt.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.sbt.plugins._.version"></a><a class="term" href="options.html#opt-programs.sbt.plugins._.version"><code class="option">programs.sbt.plugins.*.version</code></a></span></dt><dd><p>The version of the plugin.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/sbt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/sbt.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.scmpuff.enable"></a><a class="term" href="options.html#opt-programs.scmpuff.enable"><code class="option">programs.scmpuff.enable</code></a></span></dt><dd><p>Whether to enable scmpuff, a command line tool that allows you to work quicker with Git by substituting numeric shortcuts for files.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.scmpuff.enable"></a><a class="term" href="options.html#opt-programs.scmpuff.enable"><code class="option">programs.scmpuff.enable</code></a></span></dt><dd><p>Whether to enable scmpuff, a command line tool that allows you to work quicker with Git by
+substituting numeric shortcuts for files.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
@@ -6736,7 +6749,9 @@ block when <code class="literal">null</code>.
         "example.org"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.dynamicForwards._.port"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.dynamicForwards._.port"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.dynamicForwards.*.port</code></a></span></dt><dd><p>Specifies port number to bind on bind address.</p><p><span class="emphasis"><em>Type:</em></span> 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.dynamicForwards._.port"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.dynamicForwards._.port"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.dynamicForwards.*.port</code></a></span></dt><dd><p>Specifies port number to bind on bind address.</p><p><span class="emphasis"><em>Type:</em></span> null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         8080
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
@@ -6817,15 +6832,21 @@ Identities will be tried in the given order.
         "example.org"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.localForwards._.bind.port"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.localForwards._.bind.port"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.localForwards.*.bind.port</code></a></span></dt><dd><p>Specifies port number to bind on bind address.</p><p><span class="emphasis"><em>Type:</em></span> 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.localForwards._.bind.port"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.localForwards._.bind.port"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.localForwards.*.bind.port</code></a></span></dt><dd><p>Specifies port number to bind on bind address.</p><p><span class="emphasis"><em>Type:</em></span> null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         8080
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.localForwards._.host.address"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.localForwards._.host.address"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.localForwards.*.host.address</code></a></span></dt><dd><p>The address where to forward the traffic to.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.localForwards._.host.address"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.localForwards._.host.address"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.localForwards.*.host.address</code></a></span></dt><dd><p>The address where to forward the traffic to.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         "example.org"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.localForwards._.host.port"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.localForwards._.host.port"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.localForwards.*.host.port</code></a></span></dt><dd><p>Specifies port number to forward the traffic to.</p><p><span class="emphasis"><em>Type:</em></span> 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.localForwards._.host.port"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.localForwards._.host.port"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.localForwards.*.host.port</code></a></span></dt><dd><p>Specifies port number to forward the traffic to.</p><p><span class="emphasis"><em>Type:</em></span> null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         80
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
@@ -6864,15 +6885,21 @@ Identities will be tried in the given order.
         "example.org"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.remoteForwards._.bind.port"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.remoteForwards._.bind.port"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.remoteForwards.*.bind.port</code></a></span></dt><dd><p>Specifies port number to bind on bind address.</p><p><span class="emphasis"><em>Type:</em></span> 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.remoteForwards._.bind.port"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.remoteForwards._.bind.port"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.remoteForwards.*.bind.port</code></a></span></dt><dd><p>Specifies port number to bind on bind address.</p><p><span class="emphasis"><em>Type:</em></span> null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         8080
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.remoteForwards._.host.address"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.remoteForwards._.host.address"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.remoteForwards.*.host.address</code></a></span></dt><dd><p>The address where to forward the traffic to.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.remoteForwards._.host.address"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.remoteForwards._.host.address"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.remoteForwards.*.host.address</code></a></span></dt><dd><p>The address where to forward the traffic to.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         "example.org"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.remoteForwards._.host.port"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.remoteForwards._.host.port"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.remoteForwards.*.host.port</code></a></span></dt><dd><p>Specifies port number to forward the traffic to.</p><p><span class="emphasis"><em>Type:</em></span> 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ssh.matchBlocks._name_.remoteForwards._.host.port"></a><a class="term" href="options.html#opt-programs.ssh.matchBlocks._name_.remoteForwards._.host.port"><code class="option">programs.ssh.matchBlocks.&lt;name&gt;.remoteForwards.*.host.port</code></a></span></dt><dd><p>Specifies port number to forward the traffic to.</p><p><span class="emphasis"><em>Type:</em></span> null or 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         80
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ssh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ssh.nix&gt;
@@ -7428,6 +7455,37 @@ is possible to override the sensible settings using the
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/tmux.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/tmux.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.topgrade.enable"></a><a class="term" href="options.html#opt-programs.topgrade.enable"><code class="option">programs.topgrade.enable</code></a></span></dt><dd><p>Whether to enable topgrade.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/topgrade.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/topgrade.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.topgrade.package"></a><a class="term" href="options.html#opt-programs.topgrade.package"><code class="option">programs.topgrade.package</code></a></span></dt><dd><p>The package to use for the topgrade binary.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.topgrade
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/topgrade.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/topgrade.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.topgrade.settings"></a><a class="term" href="options.html#opt-programs.topgrade.settings"><code class="option">programs.topgrade.settings</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">~/.config/topgrade.toml</code>.
+</p><p>
+See <a class="link" href="https://github.com/r-darwish/topgrade/wiki/Step-list" target="_top">https://github.com/r-darwish/topgrade/wiki/Step-list</a> for the full list
+of options.
+</p><p><span class="emphasis"><em>Type:</em></span> TOML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        { }
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  assume_yes = true;
+  disable = [
+    "flutter"
+    "node"
+  ];
+  set_title = false;
+  cleanup = true;
+  commands = {
+    "Run garbage collection on Nix store" = "nix-collect-garbage";
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/topgrade.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/topgrade.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.urxvt.enable"></a><a class="term" href="options.html#opt-programs.urxvt.enable"><code class="option">programs.urxvt.enable</code></a></span></dt><dd><p>Whether to enable rxvt-unicode terminal emulator.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -8756,6 +8814,10 @@ percent symbol).
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/dunst.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dunst.package"></a><a class="term" href="options.html#opt-services.dunst.package"><code class="option">services.dunst.package</code></a></span></dt><dd><p>Package providing <span class="command"><strong>dunst</strong></span>.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.dunst
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/dunst.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dunst.iconTheme"></a><a class="term" href="options.html#opt-services.dunst.iconTheme"><code class="option">services.dunst.iconTheme</code></a></span></dt><dd><p>Set the icon theme.</p><p><span class="emphasis"><em>Type:</em></span> submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
@@ -8797,6 +8859,10 @@ percent symbol).
   };
 };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/dunst.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dunst.waylandDisplay"></a><a class="term" href="options.html#opt-services.dunst.waylandDisplay"><code class="option">services.dunst.waylandDisplay</code></a></span></dt><dd><p>Set the service's <code class="envar">WAYLAND_DISPLAY</code> environment variable.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        ""
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/dunst.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.dwm-status.enable"></a><a class="term" href="options.html#opt-services.dwm-status.enable"><code class="option">services.dwm-status.enable</code></a></span></dt><dd><p>Whether to enable dwm-status user service.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
@@ -9526,6 +9592,12 @@ Use <code class="literal">any</code> to listen on all addresses.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/mpdris2.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/mpdris2.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.mpris-proxy.enable"></a><a class="term" href="options.html#opt-services.mpris-proxy.enable"><code class="option">services.mpris-proxy.enable</code></a></span></dt><dd><p>Whether to enable a proxy forwarding Bluetooth MIDI controls via MPRIS2 to control media players.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/mpris-proxy.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/mpris-proxy.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.muchsync.remotes"></a><a class="term" href="options.html#opt-services.muchsync.remotes"><code class="option">services.muchsync.remotes</code></a></span></dt><dd><p>Muchsync remotes to synchronise with.
 </p><p><span class="emphasis"><em>Type:</em></span> attribute set of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
@@ -9653,6 +9725,12 @@ special characters including spaces may need to be escaped.
         pkgs.parcellite
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.clipit</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/parcellite.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/parcellite.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pass-secret-service.enable"></a><a class="term" href="options.html#opt-services.pass-secret-service.enable"><code class="option">services.pass-secret-service.enable</code></a></span></dt><dd><p>Whether to enable Pass libsecret service.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pass-secret-service.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/pass-secret-service.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.password-store-sync.enable"></a><a class="term" href="options.html#opt-services.password-store-sync.enable"><code class="option">services.password-store-sync.enable</code></a></span></dt><dd><p>Whether to enable Password store periodic sync.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -9688,6 +9766,21 @@ for more information about the format.
         "24h"
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         "10m"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pbgopy.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/pbgopy.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pbgopy.httpAuth"></a><a class="term" href="options.html#opt-services.pbgopy.httpAuth"><code class="option">services.pbgopy.httpAuth</code></a></span></dt><dd><p>Basic HTTP authentication's username and password. Both the username and
+password are escaped.
+</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "user:pass"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pbgopy.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/pbgopy.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pbgopy.port"></a><a class="term" href="options.html#opt-services.pbgopy.port"><code class="option">services.pbgopy.port</code></a></span></dt><dd><p>The port to host the pbgopy server on.
+</p><p><span class="emphasis"><em>Type:</em></span> 16 bit unsigned integer; between 0 and 65535 (both inclusive)</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        9090
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        8080
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/pbgopy.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/pbgopy.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.picom.enable"></a><a class="term" href="options.html#opt-services.picom.enable"><code class="option">services.picom.enable</code></a></span></dt><dd><p>Whether to enable Picom X11 compositor.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -10036,6 +10129,12 @@ click-right=pavucontrol &amp;
 }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/polybar.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/polybar.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.poweralertd.enable"></a><a class="term" href="options.html#opt-services.poweralertd.enable"><code class="option">services.poweralertd.enable</code></a></span></dt><dd><p>Whether to enable the Upower-powered power alerterd.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/poweralertd.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/poweralertd.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.pulseeffects.enable"></a><a class="term" href="options.html#opt-services.pulseeffects.enable"><code class="option">services.pulseeffects.enable</code></a></span></dt><dd><p>Whether to enable Pulseeffects daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
