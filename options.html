@@ -2896,6 +2896,24 @@ CTRL-T keybinding.
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fzf.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/fzf.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.fzf.tmux.enableShellIntegration"></a><a class="term" href="options.html#opt-programs.fzf.tmux.enableShellIntegration"><code class="option">programs.fzf.tmux.enableShellIntegration</code></a></span></dt><dd><p>Whether to enable setting <code class="literal">FZF_TMUX=1</code> which causes shell integration to use fzf-tmux
+.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fzf.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/fzf.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.fzf.tmux.shellIntegrationOptions"></a><a class="term" href="options.html#opt-programs.fzf.tmux.shellIntegrationOptions"><code class="option">programs.fzf.tmux.shellIntegrationOptions</code></a></span></dt><dd><p>If <code class="option">programs.fzf.tmux.enableShellIntegration</code> is set to <code class="literal">true</code>,
+shell integration will use these options for fzf-tmux.
+See <span class="command"><strong>fzf-tmux --help</strong></span> for available options.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ "-d 40%" ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/fzf.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/fzf.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gh.enable"></a><a class="term" href="options.html#opt-programs.gh.enable"><code class="option">programs.gh.enable</code></a></span></dt><dd><p>Whether to enable GitHub CLI tool.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -4442,6 +4460,29 @@ for the documentation.
 }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kitty.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/kitty.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.lazygit.enable"></a><a class="term" href="options.html#opt-programs.lazygit.enable"><code class="option">programs.lazygit.enable</code></a></span></dt><dd><p>Whether to enable lazygit, a simple terminal UI for git commands.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/lazygit.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/lazygit.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.lazygit.settings"></a><a class="term" href="options.html#opt-programs.lazygit.settings"><code class="option">programs.lazygit.settings</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">~/.config/lazygit/config.yml</code> on Linux
+or <code class="filename">~/Library/Application Support/lazygit/config.yml</code> on Darwin. See
+<a class="link" href="https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md" target="_top">https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md</a>
+for supported values.
+</p><p><span class="emphasis"><em>Type:</em></span> YAML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        { }
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  gui.theme = {
+    lightTheme = true;
+    activeBorderColor = [ "blue" "bold" ];
+    inactiveBorderColor = [ "black" ];
+    selectedLineBgColor = [ "default" ];
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/lazygit.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/lazygit.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.lesspipe.enable"></a><a class="term" href="options.html#opt-programs.lesspipe.enable"><code class="option">programs.lesspipe.enable</code></a></span></dt><dd><p>Whether to enable lesspipe preprocessor for less.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -5126,6 +5167,33 @@ see
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ncmpcpp.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/ncmpcpp.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ncspot.enable"></a><a class="term" href="options.html#opt-programs.ncspot.enable"><code class="option">programs.ncspot.enable</code></a></span></dt><dd><p>Whether to enable ncspot.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ncspot.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/ncspot.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ncspot.package"></a><a class="term" href="options.html#opt-programs.ncspot.package"><code class="option">programs.ncspot.package</code></a></span></dt><dd><p>The package to use for ncspot.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.ncspot
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ncspot.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/ncspot.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ncspot.settings"></a><a class="term" href="options.html#opt-programs.ncspot.settings"><code class="option">programs.ncspot.settings</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">~/.config/ncspot/config.toml</code>.
+</p><p>
+See <a class="link" href="https://github.com/hrkfdn/ncspot#configuration" target="_top">https://github.com/hrkfdn/ncspot#configuration</a>
+for the full list of options.
+</p><p><span class="emphasis"><em>Type:</em></span> TOML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  shuffle = true;
+  gapless = true;
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/ncspot.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/ncspot.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.ne.enable"></a><a class="term" href="options.html#opt-programs.ne.enable"><code class="option">programs.ne.enable</code></a></span></dt><dd><p>Whether to enable ne.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -5200,6 +5268,12 @@ csh  1  ^#!\s*/.*\b(csh|tcsh)\s*
                     &lt;home-manager/modules/programs/neomutt.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neomutt.binds._.map"></a><a class="term" href="options.html#opt-programs.neomutt.binds._.map"><code class="option">programs.neomutt.binds.*.map</code></a></span></dt><dd><p>Select the menu to bind the command to.</p><p><span class="emphasis"><em>Type:</em></span> one of "alias", "attach", "browser", "compose", "editor", "generic", "index", "mix", "pager", "pgp", "postpone", "query", "smime" or list of one of "alias", "attach", "browser", "compose", "editor", "generic", "index", "mix", "pager", "pgp", "postpone", "query", "smime"s</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "index"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neomutt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/neomutt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neomutt.changeFolderWhenSourcingAccount"></a><a class="term" href="options.html#opt-programs.neomutt.changeFolderWhenSourcingAccount"><code class="option">programs.neomutt.changeFolderWhenSourcingAccount</code></a></span></dt><dd><p>Whether to enable changing the folder when sourcing an account.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neomutt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neomutt.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neomutt.checkStatsInterval"></a><a class="term" href="options.html#opt-programs.neomutt.checkStatsInterval"><code class="option">programs.neomutt.checkStatsInterval</code></a></span></dt><dd><p>Enable and set the interval of automatic mail check.</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -8143,6 +8217,16 @@ if they are duplicates of the previous event.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/zsh.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zsh.history.ignorePatterns"></a><a class="term" href="options.html#opt-programs.zsh.history.ignorePatterns"><code class="option">programs.zsh.history.ignorePatterns</code></a></span></dt><dd><p>Do not enter command lines into the history list
+if they match any one of the given shell patterns.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ "rm *" "pkill *" ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/zsh.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zsh.history.ignoreSpace"></a><a class="term" href="options.html#opt-programs.zsh.history.ignoreSpace"><code class="option">programs.zsh.history.ignoreSpace</code></a></span></dt><dd><p>Do not enter command lines into the history list
 if the first character is a space.
