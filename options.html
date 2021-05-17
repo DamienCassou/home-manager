@@ -5571,6 +5571,34 @@ use Python 3 plugins.
         "http://example.com"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/newsboat.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/newsboat.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nix-index.enable"></a><a class="term" href="options.html#opt-programs.nix-index.enable"><code class="option">programs.nix-index.enable</code></a></span></dt><dd><p>Whether to enable nix-index, a file database for nixpkgs.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nix-index.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nix-index.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nix-index.enableBashIntegration"></a><a class="term" href="options.html#opt-programs.nix-index.enableBashIntegration"><code class="option">programs.nix-index.enableBashIntegration</code></a></span></dt><dd><p>Whether to enable Bash integration.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nix-index.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nix-index.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nix-index.enableFishIntegration"></a><a class="term" href="options.html#opt-programs.nix-index.enableFishIntegration"><code class="option">programs.nix-index.enableFishIntegration</code></a></span></dt><dd><p>Whether to enable Fish integration.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nix-index.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nix-index.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nix-index.enableZshIntegration"></a><a class="term" href="options.html#opt-programs.nix-index.enableZshIntegration"><code class="option">programs.nix-index.enableZshIntegration</code></a></span></dt><dd><p>Whether to enable Zsh integration.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nix-index.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nix-index.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nix-index.package"></a><a class="term" href="options.html#opt-programs.nix-index.package"><code class="option">programs.nix-index.package</code></a></span></dt><dd><p>Package providing the <span class="command"><strong>nix-index</strong></span> tool.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.nix-index
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nix-index.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/nix-index.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.noti.enable"></a><a class="term" href="options.html#opt-programs.noti.enable"><code class="option">programs.noti.enable</code></a></span></dt><dd><p>Whether to enable Noti.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -7723,7 +7751,7 @@ manually set any options not listed above.
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        <em class="replaceable"><code>(build of vscode-1.55.2)</code></em>
+        <em class="replaceable"><code>(build of vscode-1.56.2)</code></em>
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.vscodium</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
@@ -11273,21 +11301,6 @@ GNU/Linux distributions other than NixOS.
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/generic-linux.nix#blob-path" target="_top">
                     &lt;home-manager/modules/targets/generic-linux.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.genericLinux.extraXdgDataDirs"></a><a class="term" href="options.html#opt-targets.genericLinux.extraXdgDataDirs"><code class="option">targets.genericLinux.extraXdgDataDirs</code></a></span></dt><dd><p>List of directory names to add to <code class="envar">XDG_DATA_DIRS</code>.
-</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        
-        [
-        
-        ]
-    
-      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        
-        [
-        "/usr/share" "/usr/local/share" 
-        ]
-    
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/generic-linux.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/targets/generic-linux.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.enable"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.enable"><code class="option">wayland.windowManager.sway.enable</code></a></span></dt><dd><p>Whether to enable sway wayland compositor.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -12255,6 +12268,26 @@ the list is attempted, and so on.
 }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-mime-apps.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg-mime-apps.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.systemDirs.config"></a><a class="term" href="options.html#opt-xdg.systemDirs.config"><code class="option">xdg.systemDirs.config</code></a></span></dt><dd><p>Directory names to add to <code class="envar">XDG_CONFIG_DIRS</code>
+in the user session.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ "/etc/xdg" ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-system-dirs.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/xdg-system-dirs.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.systemDirs.data"></a><a class="term" href="options.html#opt-xdg.systemDirs.data"><code class="option">xdg.systemDirs.data</code></a></span></dt><dd><p>Directory names to add to <code class="envar">XDG_DATA_DIRS</code>
+in the user session.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ "/usr/share" "/usr/local/share" ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-system-dirs.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/xdg-system-dirs.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.userDirs.enable"></a><a class="term" href="options.html#opt-xdg.userDirs.enable"><code class="option">xdg.userDirs.enable</code></a></span></dt><dd><p>Whether to manage <code class="filename">$XDG_CONFIG_HOME/user-dirs.dirs</code>.
 </p><p>
 The generated file is read-only.
