@@ -5752,6 +5752,45 @@ with this enabled only the relative name is shown.
         pkgs.neovim-unwrapped
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neovim.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.coc.enable"></a><a class="term" href="options.html#opt-programs.neovim.coc.enable"><code class="option">programs.neovim.coc.enable</code></a></span></dt><dd><p>Whether to enable Coc.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/neovim.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.coc.settings"></a><a class="term" href="options.html#opt-programs.neovim.coc.settings"><code class="option">programs.neovim.coc.settings</code></a></span></dt><dd><p>Extra configuration lines to add to
+<code class="filename">$XDG_CONFIG_HOME/nvim/coc-settings.json</code>
+See
+<a class="link" href="https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file" target="_top">https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file</a>
+for options.
+</p><p><span class="emphasis"><em>Type:</em></span> JSON value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  "suggest.noselect" = true;
+  "suggest.enablePreview" = true;
+  "suggest.enablePreselect" = false;
+  "suggest.disableKind" = true;
+  languageserver = {
+    haskell = {
+      command = "haskell-language-server-wrapper";
+      args = [ "--lsp" ];
+      rootPatterns = [
+        "*.cabal"
+        "stack.yaml"
+        "cabal.project"
+        "package.yaml"
+        "hie.yaml"
+      ];
+      filetypes = [ "haskell" "lhaskell" ];
+    };
+  };
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/neovim.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.configure"></a><a class="term" href="options.html#opt-programs.neovim.configure"><code class="option">programs.neovim.configure</code></a></span></dt><dd><p>Deprecated. Please use the other options.
 
 Generate your init file from your list of plugins and custom commands,
@@ -5807,6 +5846,9 @@ list of Python 3 packages required for your plugins to work.
 </p><p><span class="emphasis"><em>Type:</em></span> python3 packages in python.withPackages format or list of packages</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "ps: []"
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">(ps: with ps; [ python-language-server ])</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/neovim.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.generatedConfigViml"></a><a class="term" href="options.html#opt-programs.neovim.generatedConfigViml"><code class="option">programs.neovim.generatedConfigViml</code></a></span></dt><dd><p>Generated vimscript config.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n" <span class="emphasis"><em>(read only)</em></span></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neovim.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neovim.plugins"></a><a class="term" href="options.html#opt-programs.neovim.plugins"><code class="option">programs.neovim.plugins</code></a></span></dt><dd><p>List of vim plugins to install optionally associated with
 configuration to be placed in init.vim.
@@ -9545,12 +9587,6 @@ See <span class="command"><strong>barrierc --help</strong></span>.
 Port defaults to <code class="literal">24800</code>.
 </p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/barrier.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/barrier.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.barrier.client.tray"></a><a class="term" href="options.html#opt-services.barrier.client.tray"><code class="option">services.barrier.client.tray</code></a></span></dt><dd><p>Whether to enable the system tray icon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
-      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        true
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/barrier.nix#blob-path" target="_top">
-                    &lt;home-manager/modules/services/barrier.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.blueman-applet.enable"></a><a class="term" href="options.html#opt-services.blueman-applet.enable"><code class="option">services.blueman-applet.enable</code></a></span></dt><dd><p>Whether to enable the Blueman applet.
 </p><p>
 Note, for the applet to work, the 'blueman' service should
@@ -11409,6 +11445,34 @@ for more information about the format.
         "*:0/5"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/taskwarrior-sync.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/taskwarrior-sync.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.trayer.enable"></a><a class="term" href="options.html#opt-services.trayer.enable"><code class="option">services.trayer.enable</code></a></span></dt><dd><p>Whether to enable trayer, the lightweight GTK2+ systray for UNIX desktops.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/trayer.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/trayer.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.trayer.package"></a><a class="term" href="options.html#opt-services.trayer.package"><code class="option">services.trayer.package</code></a></span></dt><dd><p>The package to use for the trayer binary.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.trayer
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.trayer</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/trayer.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/trayer.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.trayer.settings"></a><a class="term" href="options.html#opt-services.trayer.settings"><code class="option">services.trayer.settings</code></a></span></dt><dd><p>Trayer configuration as a set of attributes. Further details can be
+found at <a class="link" href="https://github.com/sargon/trayer-srg" target="_top">https://github.com/sargon/trayer-srg</a>.
+
+</p><div class="informaltable"><table class="informaltable" border="0"><colgroup><col /><col /><col /><col /></colgroup><thead><tr><th>Property Name</th><th>Type</th><th>Values</th><th>Default</th></tr></thead><tbody><tr><td><code class="varname">SetDockType</code></td><td>boolean</td><td>true|false</td><td>true</td></tr><tr><td><code class="varname">SetPartialStrut</code></td><td>boolean</td><td>true|false</td><td>true</td></tr><tr><td><code class="varname">align</code></td><td>string</td><td>left|right|center</td><td>center</td></tr><tr><td><code class="varname">alpha</code></td><td>signed integer</td><td>number</td><td>127</td></tr><tr><td><code class="varname">distance</code></td><td>signed integer</td><td>number</td><td>0</td></tr><tr><td><code class="varname">distancefrom</code></td><td>string</td><td>left|right|top|bottom</td><td>top</td></tr><tr><td><code class="varname">edge</code></td><td>string</td><td>left|right|top|bottom|none</td><td>bottom</td></tr><tr><td><code class="varname">expand</code></td><td>boolean</td><td>true|false</td><td>true</td></tr><tr><td><code class="varname">height</code></td><td>signed integer</td><td>number</td><td>26</td></tr><tr><td><code class="varname">heighttype</code></td><td>string</td><td>request|pixel</td><td>pixel</td></tr><tr><td><code class="varname">iconspacing</code></td><td>signed integer</td><td>number</td><td>0</td></tr><tr><td><code class="varname">margin</code></td><td>signed integer</td><td>number</td><td>0</td></tr><tr><td><code class="varname">monitor</code></td><td>string</td><td>number|primary</td><td>0</td></tr><tr><td><code class="varname">padding</code></td><td>signed integer</td><td>number</td><td>0</td></tr><tr><td><code class="varname">tint</code></td><td>string</td><td>int</td><td>0xFFFFFFFF</td></tr><tr><td><code class="varname">transparent</code></td><td>boolean</td><td>true|false</td><td>false</td></tr><tr><td><code class="varname">width</code></td><td>signed integer</td><td>number</td><td>100</td></tr><tr><td><code class="varname">widthtype</code></td><td>string</td><td>request|pixel|percent</td><td>percent</td></tr></tbody></table></div><p>
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of null or string or boolean or signed integers</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  edge = "top";
+  padding = 6;
+  SetDockType = true;
+  tint = "0x282c34";
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/trayer.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/trayer.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.udiskie.enable"></a><a class="term" href="options.html#opt-services.udiskie.enable"><code class="option">services.udiskie.enable</code></a></span></dt><dd><p>Whether to enable udiskie mount daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -11512,6 +11576,17 @@ for a list of available options.
         "\$XDG_DATA_HOME/unison"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/unison.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/unison.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.volnoti.enable"></a><a class="term" href="options.html#opt-services.volnoti.enable"><code class="option">services.volnoti.enable</code></a></span></dt><dd><p>Whether to enable Volnoti volume HUD daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/volnoti.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/volnoti.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.volnoti.package"></a><a class="term" href="options.html#opt-services.volnoti.package"><code class="option">services.volnoti.package</code></a></span></dt><dd><p>Package containing the <span class="command"><strong>volnoti</strong></span> program.
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.volnoti
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/volnoti.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/volnoti.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.wlsunset.enable"></a><a class="term" href="options.html#opt-services.wlsunset.enable"><code class="option">services.wlsunset.enable</code></a></span></dt><dd><p>Whether to enable Whether to enable wlsunset..</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -12173,6 +12248,244 @@ for the exact format.
     
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/tmpfiles.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/tmpfiles.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults"></a><a class="term" href="options.html#opt-targets.darwin.defaults"><code class="option">targets.darwin.defaults</code></a></span></dt><dd><p>Set macOS user defaults. Values set to <code class="literal">null</code> are
+ignored.
+
+</p><div class="warning"><h3 class="title">Warning</h3><p>
+    Some settings might require a re-login to take effect.
+  </p></div><p>
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of anythingss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        
+        {
+        com.apple.desktopservices = 
+        {
+        DSDontWriteNetworkStores = true; DSDontWriteUSBStores = true; 
+        }
+    ; 
+        }
+    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.NSGlobalDomain.AppleLanguages"></a><a class="term" href="options.html#opt-targets.darwin.defaults.NSGlobalDomain.AppleLanguages"><code class="option">targets.darwin.defaults.NSGlobalDomain.AppleLanguages</code></a></span></dt><dd><p>Sets the language to use in the preferred order.</p><p><span class="emphasis"><em>Type:</em></span> null or list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        
+        [
+        "en" 
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.NSGlobalDomain.AppleLocale"></a><a class="term" href="options.html#opt-targets.darwin.defaults.NSGlobalDomain.AppleLocale"><code class="option">targets.darwin.defaults.NSGlobalDomain.AppleLocale</code></a></span></dt><dd><p>Configures the user locale.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "en_US"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.NSGlobalDomain.AppleMeasurementUnits"></a><a class="term" href="options.html#opt-targets.darwin.defaults.NSGlobalDomain.AppleMeasurementUnits"><code class="option">targets.darwin.defaults.NSGlobalDomain.AppleMeasurementUnits</code></a></span></dt><dd><p>Sets the measurement unit.</p><p><span class="emphasis"><em>Type:</em></span> null or one of "Centimeters", "Inches"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "Centimeters"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.NSGlobalDomain.AppleMetricUnits"></a><a class="term" href="options.html#opt-targets.darwin.defaults.NSGlobalDomain.AppleMetricUnits"><code class="option">targets.darwin.defaults.NSGlobalDomain.AppleMetricUnits</code></a></span></dt><dd><p>Whether to enable the metric system.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.NSGlobalDomain.AppleTemperatureUnit"></a><a class="term" href="options.html#opt-targets.darwin.defaults.NSGlobalDomain.AppleTemperatureUnit"><code class="option">targets.darwin.defaults.NSGlobalDomain.AppleTemperatureUnit</code></a></span></dt><dd><p>Sets the temperature unit.</p><p><span class="emphasis"><em>Type:</em></span> null or one of "Celsius", "Fahrenheit"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "Celsius"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.NSGlobalDomain.NSAutomaticCapitalizationEnabled"></a><a class="term" href="options.html#opt-targets.darwin.defaults.NSGlobalDomain.NSAutomaticCapitalizationEnabled"><code class="option">targets.darwin.defaults.NSGlobalDomain.NSAutomaticCapitalizationEnabled</code></a></span></dt><dd><p>Whether to enable automatic captilization.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.NSGlobalDomain.NSAutomaticDashSubstitutionEnabled"></a><a class="term" href="options.html#opt-targets.darwin.defaults.NSGlobalDomain.NSAutomaticDashSubstitutionEnabled"><code class="option">targets.darwin.defaults.NSGlobalDomain.NSAutomaticDashSubstitutionEnabled</code></a></span></dt><dd><p>Whether to enable smart dashes.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled"></a><a class="term" href="options.html#opt-targets.darwin.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled"><code class="option">targets.darwin.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled</code></a></span></dt><dd><p>Whether to enable period with double space.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled"></a><a class="term" href="options.html#opt-targets.darwin.defaults.NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled"><code class="option">targets.darwin.defaults.NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled</code></a></span></dt><dd><p>Whether to enable smart quotes.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled"></a><a class="term" href="options.html#opt-targets.darwin.defaults.NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled"><code class="option">targets.darwin.defaults.NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled</code></a></span></dt><dd><p>Whether to enable spelling correction.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.Safari.AutoFillCreditCardData"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.Safari.AutoFillCreditCardData"><code class="option">targets.darwin.defaults.com.apple.Safari.AutoFillCreditCardData</code></a></span></dt><dd><p>Whether to enable autofill of credit card numbers.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.Safari.AutoFillPasswords"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.Safari.AutoFillPasswords"><code class="option">targets.darwin.defaults.com.apple.Safari.AutoFillPasswords</code></a></span></dt><dd><p>Whether to enable autofill of usernames and passwords.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.Safari.AutoOpenSafeDownloads"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.Safari.AutoOpenSafeDownloads"><code class="option">targets.darwin.defaults.com.apple.Safari.AutoOpenSafeDownloads</code></a></span></dt><dd><p>Whether to enable opening of downloaded files.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.Safari.IncludeDevelopMenu"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.Safari.IncludeDevelopMenu"><code class="option">targets.darwin.defaults.com.apple.Safari.IncludeDevelopMenu</code></a></span></dt><dd><p>Whether to enable "Develop" menu in the menu bar.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.Safari.ShowOverlayStatusBar"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.Safari.ShowOverlayStatusBar"><code class="option">targets.darwin.defaults.com.apple.Safari.ShowOverlayStatusBar</code></a></span></dt><dd><p>Whether to enable status bar.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.Safari.WebKitDeveloperExtrasEnabledPreferenceKey"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.Safari.WebKitDeveloperExtrasEnabledPreferenceKey"><code class="option">targets.darwin.defaults.com.apple.Safari.WebKitDeveloperExtrasEnabledPreferenceKey</code></a></span></dt><dd><p>Configures the web inspector.
+
+</p><div class="warning"><h3 class="title">Warning</h3><p>
+    Instead of setting this option directly, set
+    <code class="option">IncludeDevelopMenu</code> instead.
+  </p></div><p>
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.Safari.com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.Safari.com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled"><code class="option">targets.darwin.defaults.com.apple.Safari.com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled</code></a></span></dt><dd><p>Configures the web inspector.
+
+</p><div class="warning"><h3 class="title">Warning</h3><p>
+    Instead of setting this option directly, set
+    <code class="option">IncludeDevelopMenu</code> instead.
+  </p></div><p>
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.desktopservices.DSDontWriteNetworkStores"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.desktopservices.DSDontWriteNetworkStores"><code class="option">targets.darwin.defaults.com.apple.desktopservices.DSDontWriteNetworkStores</code></a></span></dt><dd><p>Disable use of <code class="filename">.DS_Store</code> files on network shares.
+See <a class="link" href="https://support.apple.com/en-us/HT208209" target="_top">the
+official article</a> for more info.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.desktopservices.DSDontWriteUSBStores"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.desktopservices.DSDontWriteUSBStores"><code class="option">targets.darwin.defaults.com.apple.desktopservices.DSDontWriteUSBStores</code></a></span></dt><dd><p>Disable use of <code class="filename">.DS_Store</code> files on thumb drives.
+</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.dock.expose-group-apps"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.dock.expose-group-apps"><code class="option">targets.darwin.defaults.com.apple.dock.expose-group-apps</code></a></span></dt><dd><p>Whether to enable grouping of windows by application in Mission Control.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.dock.size-immutable"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.dock.size-immutable"><code class="option">targets.darwin.defaults.com.apple.dock.size-immutable</code></a></span></dt><dd><p>Whether to enable locking of the dock size.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.dock.tilesize"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.dock.tilesize"><code class="option">targets.darwin.defaults.com.apple.dock.tilesize</code></a></span></dt><dd><p>Sets the size of the dock.</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        64
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.apple.menuextra.battery.ShowPercent"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.apple.menuextra.battery.ShowPercent"><code class="option">targets.darwin.defaults.com.apple.menuextra.battery.ShowPercent</code></a></span></dt><dd><p>Whether to show battery percentage in the menu bar.</p><p><span class="emphasis"><em>Type:</em></span> null or one of "YES", "NO"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        "NO"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.googlecode.iterm2.AddNewTabAtEndOfTabs"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.googlecode.iterm2.AddNewTabAtEndOfTabs"><code class="option">targets.darwin.defaults.com.googlecode.iterm2.AddNewTabAtEndOfTabs</code></a></span></dt><dd><p>Whether to enable placement of new tabs at the end of the tab bar.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.googlecode.iterm2.AlternateMouseScroll"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.googlecode.iterm2.AlternateMouseScroll"><code class="option">targets.darwin.defaults.com.googlecode.iterm2.AlternateMouseScroll</code></a></span></dt><dd><p>Whether to enable arrow keys when scrolling in alternate screen mode.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.googlecode.iterm2.CopySelection"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.googlecode.iterm2.CopySelection"><code class="option">targets.darwin.defaults.com.googlecode.iterm2.CopySelection</code></a></span></dt><dd><p>Whether to enable copy to clipboard upon selecting text.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.googlecode.iterm2.ExperimentalKeyHandling"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.googlecode.iterm2.ExperimentalKeyHandling"><code class="option">targets.darwin.defaults.com.googlecode.iterm2.ExperimentalKeyHandling</code></a></span></dt><dd><p>Whether to enable experimental key handling for AquaSKK compatibility.</p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.defaults.com.googlecode.iterm2.OpenTmuxWindowsIn"></a><a class="term" href="options.html#opt-targets.darwin.defaults.com.googlecode.iterm2.OpenTmuxWindowsIn"><code class="option">targets.darwin.defaults.com.googlecode.iterm2.OpenTmuxWindowsIn</code></a></span></dt><dd><p>Configures how to restore tmux windows when attaching to a session.
+
+</p><div class="variablelist"><p class="title"><strong>Possible Values</strong></p><dl class="variablelist"><dt><span class="term"><code class="literal">0</code></span></dt><dd><p>Native windows</p></dd><dt><span class="term"><code class="literal">1</code></span></dt><dd><p>Native tabs in a new window</p></dd><dt><span class="term"><code class="literal">2</code></span></dt><dd><p>Tabs in the attaching window</p></dd></dl></div><p>
+</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        2
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/options.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/options.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.keybindings"></a><a class="term" href="options.html#opt-targets.darwin.keybindings"><code class="option">targets.darwin.keybindings</code></a></span></dt><dd><p>This will configure the default keybindings for text fields in macOS
+applications. See
+<a class="link" href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/TextDefaultsBindings/TextDefaultsBindings.html" target="_top">Apple's documentation</a>
+for more details.
+
+</p><div class="warning"><h3 class="title">Warning</h3><p>
+    Existing keybinding configuration will be wiped when using this
+    option.
+  </p></div><p>
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of anythings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        
+        {
+        ^u = "deleteToBeginningOfLine:"; ^w = "deleteWordBackward:"; 
+        }
+    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/keybindings.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/keybindings.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.darwin.search"></a><a class="term" href="options.html#opt-targets.darwin.search"><code class="option">targets.darwin.search</code></a></span></dt><dd><p>Default search engine.</p><p><span class="emphasis"><em>Type:</em></span> null or one of "Bing", "DuckDuckGo", "Ecosia", "Google", "Yahoo"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/search.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/targets/darwin/search.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-targets.genericLinux.enable"></a><a class="term" href="options.html#opt-targets.genericLinux.enable"><code class="option">targets.genericLinux.enable</code></a></span></dt><dd><p>Whether to enable settings that make Home Manager work better on
 GNU/Linux distributions other than NixOS.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -13230,7 +13543,7 @@ and
 <a class="link" href="https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-latest.html" target="_top">https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-latest.html</a>,
 respectively.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        true
+        true if host platform is Linux, false otherwise
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-mime.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/xdg-mime.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xdg.mimeApps.enable"></a><a class="term" href="options.html#opt-xdg.mimeApps.enable"><code class="option">xdg.mimeApps.enable</code></a></span></dt><dd><p>Whether to manage <code class="filename">$XDG_CONFIG_HOME/mimeapps.list</code>.
