@@ -4499,6 +4499,26 @@ supported plugins run:
         true
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kitty.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/kitty.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.kitty.darwinLaunchOptions"></a><a class="term" href="options.html#opt-programs.kitty.darwinLaunchOptions"><code class="option">programs.kitty.darwinLaunchOptions</code></a></span></dt><dd><p>Command-line options to use when launched by Mac OS GUI</p><p><span class="emphasis"><em>Type:</em></span> null or list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        null
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[
+  "--single-instance"
+  "--directory=/tmp/my-dir"
+  "--listen-on=unix:/tmp/my-socket"
+]
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kitty.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/kitty.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.kitty.environment"></a><a class="term" href="options.html#opt-programs.kitty.environment"><code class="option">programs.kitty.environment</code></a></span></dt><dd><p>Environment variables to set or override.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  "LS_COLORS" = "1";
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kitty.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/kitty.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.kitty.extraConfig"></a><a class="term" href="options.html#opt-programs.kitty.extraConfig"><code class="option">programs.kitty.extraConfig</code></a></span></dt><dd><p>Additional configuration to add.</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         ""
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kitty.nix#blob-path" target="_top">
@@ -5398,6 +5418,10 @@ csh  1  ^#!\s*/.*\b(csh|tcsh)\s*
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neomutt.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/neomutt.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neomutt.package"></a><a class="term" href="options.html#opt-programs.neomutt.package"><code class="option">programs.neomutt.package</code></a></span></dt><dd><p>The neomutt package to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.neomutt
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neomutt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/neomutt.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.neomutt.binds"></a><a class="term" href="options.html#opt-programs.neomutt.binds"><code class="option">programs.neomutt.binds</code></a></span></dt><dd><p>List of keybindings.</p><p><span class="emphasis"><em>Type:</em></span> list of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -8181,7 +8205,7 @@ manually set any options not listed above.
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
 </p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
-        <em class="replaceable"><code>(build of vscode-1.59.0)</code></em>
+        <em class="replaceable"><code>(build of vscode-1.59.1)</code></em>
       </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.vscodium</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
@@ -9314,7 +9338,7 @@ but are substituted anywhere on a line.
         null
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
         "adwaita-dark"
-      </code></p><p><span class="emphasis"><em>Related packages:</em></span> </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">pkgs.adwaita-qt</code> (adwaita-qt-1.3.1): A style to bend Qt applications to look like they belong into GNOME Shell</p></li><li class="listitem"><p><code class="literal">pkgs.libsForQt5.qtstyleplugins</code> (qtstyleplugins-unstable-2017-03-11): Additional style plugins for Qt5, including BB10, GTK, Cleanlooks, Motif, Plastique</p></li></ul></div><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/qt.nix#blob-path" target="_top">
+      </code></p><p><span class="emphasis"><em>Related packages:</em></span> </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">pkgs.adwaita-qt</code> (adwaita-qt-1.4.0): A style to bend Qt applications to look like they belong into GNOME Shell</p></li><li class="listitem"><p><code class="literal">pkgs.libsForQt5.qtstyleplugins</code> (qtstyleplugins-unstable-2017-03-11): Additional style plugins for Qt5, including BB10, GTK, Cleanlooks, Motif, Plastique</p></li></ul></div><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/qt.nix#blob-path" target="_top">
                     &lt;home-manager/modules/misc/qt.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.barrier.client.enable"></a><a class="term" href="options.html#opt-services.barrier.client.enable"><code class="option">services.barrier.client.enable</code></a></span></dt><dd><p>Whether to enable Barrier Client daemon.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
@@ -9677,6 +9701,70 @@ else pkgs.emacs
         "pipewire-pulse"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/fluidsynth.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/fluidsynth.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.fnott.enable"></a><a class="term" href="options.html#opt-services.fnott.enable"><code class="option">services.fnott.enable</code></a></span></dt><dd><p>Whether to enable fnott, a lightweight Wayland notification daemon for wlroots-based compositors
+.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        false
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        true
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/fnott.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/fnott.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.fnott.package"></a><a class="term" href="options.html#opt-services.fnott.package"><code class="option">services.fnott.package</code></a></span></dt><dd><p>Package providing <span class="command"><strong>fnott</strong></span>.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        pkgs.fnott
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/fnott.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/fnott.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.fnott.configFile"></a><a class="term" href="options.html#opt-services.fnott.configFile"><code class="option">services.fnott.configFile</code></a></span></dt><dd><p>Path to the configuration file read by fnott.
+</p><p>
+Note that environment variables in the path won't be properly expanded.
+</p><p>
+The configuration specified under 
+<code class="option">services.fnott.settings</code> will be generated and
+written to <code class="filename">$XDG_CONFIG_HOME/fnott/fnott.ini</code>
+regardless of this option. This allows using a mutable configuration file
+generated from the immutable one, useful in scenarios where live reloading is desired.
+</p><p><span class="emphasis"><em>Type:</em></span> string or path</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        "\$XDG_CONFIG_HOME/fnott/fnott.ini"
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/fnott.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/fnott.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.fnott.extraFlags"></a><a class="term" href="options.html#opt-services.fnott.extraFlags"><code class="option">services.fnott.extraFlags</code></a></span></dt><dd><p>Extra arguments to use for executing fnott.
+</p><p><span class="emphasis"><em>Type:</em></span> list of strings</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        [
+        
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        
+        [
+        "-s" 
+        ]
+    
+      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/fnott.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/fnott.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.fnott.settings"></a><a class="term" href="options.html#opt-services.fnott.settings"><code class="option">services.fnott.settings</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/fnott/fnott.ini</code>.
+</p><p>
+See
+<span class="citerefentry"><span class="refentrytitle">fnott.ini</span>(5)</span> for a list of avaliable options and <a class="link" href="https://codeberg.org/dnkl/fnott/src/branch/master/fnott.ini" target="_top">https://codeberg.org/dnkl/fnott/src/branch/master/fnott.ini</a>
+for an example configuration.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of INI atom (null, bool, int, float or string)ss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        
+        {
+        
+        }
+    
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  main = {
+    notification-margin = 5;
+  };
+
+  low = {
+    timeout = 5;
+    title-font = "Dina:weight=bold:slant=italic";
+    title-color = "ffffff";
+  };
+}
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/fnott.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/fnott.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.gammastep.enable"></a><a class="term" href="options.html#opt-services.gammastep.enable"><code class="option">services.gammastep.enable</code></a></span></dt><dd><p>Whether to enable Gammastep.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         false
       </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
@@ -12359,7 +12447,7 @@ module to install Sway.
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.assigns"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.assigns"><code class="option">wayland.windowManager.sway.config.assigns</code></a></span></dt><dd><p>An attribute set that assigns applications to workspaces based
 on criteria.
-</p><p><span class="emphasis"><em>Type:</em></span> attribute set of list of attribute set of stringsss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of list of attribute set of string or booleansss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
         
@@ -12664,7 +12752,7 @@ This must to correspond to the value of the keybinding of the default workspace.
         2
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.floating.criteria"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.floating.criteria"><code class="option">wayland.windowManager.sway.config.floating.criteria</code></a></span></dt><dd><p>List of criteria for windows that should be opened in a floating mode.</p><p><span class="emphasis"><em>Type:</em></span> list of attribute set of stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.floating.criteria"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.floating.criteria"><code class="option">wayland.windowManager.sway.config.floating.criteria</code></a></span></dt><dd><p>List of criteria for windows that should be opened in a floating mode.</p><p><span class="emphasis"><em>Type:</em></span> list of attribute set of string or booleanss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         [
         
@@ -13014,13 +13102,15 @@ See <code class="option">for_window</code> swaywm option documentation.
         "border pixel 1"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.window.commands._.criteria"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.window.commands._.criteria"><code class="option">wayland.windowManager.sway.config.window.commands.*.criteria</code></a></span></dt><dd><p>Criteria of the windows on which command should be executed.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of strings</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        
-        {
-        title = "x200: ~/work"; 
-        }
-    
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.window.commands._.criteria"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.window.commands._.criteria"><code class="option">wayland.windowManager.sway.config.window.commands.*.criteria</code></a></span></dt><dd><p>Criteria of the windows on which command should be executed.
+</p><p>
+A value of <code class="literal">true</code> is equivalent to using an empty
+criteria (which is different from an empty string criteria).
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of string or booleans</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  title = "x200: ~/work";
+  floating = true;
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.config.window.hideEdgeBorders"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.config.window.hideEdgeBorders"><code class="option">wayland.windowManager.sway.config.window.hideEdgeBorders</code></a></span></dt><dd><p>Hide window borders adjacent to the screen edges.</p><p><span class="emphasis"><em>Type:</em></span> one of "none", "vertical", "horizontal", "both", "smart"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "none"
@@ -13648,7 +13738,7 @@ used in the Awesome configuration.
         
         ]
     
-      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ luaPackages.oocairo ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/awesome.nix#blob-path" target="_top">
+      </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">[ pkgs.luaPackages.vicious ]</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/awesome.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/awesome.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.awesome.noArgb"></a><a class="term" href="options.html#opt-xsession.windowManager.awesome.noArgb"><code class="option">xsession.windowManager.awesome.noArgb</code></a></span></dt><dd><p>Disable client transparency support, which can be greatly
 detrimental to performance in some setups
@@ -13887,7 +13977,7 @@ If 'i3.config.gaps' settings are specified, 'pkgs.i3-gaps' will be set as a defa
                     &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.assigns"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.assigns"><code class="option">xsession.windowManager.i3.config.assigns</code></a></span></dt><dd><p>An attribute set that assigns applications to workspaces based
 on criteria.
-</p><p><span class="emphasis"><em>Type:</em></span> attribute set of list of attribute set of stringsss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of list of attribute set of string or booleansss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         {
         
@@ -14181,7 +14271,7 @@ This must to correspond to the value of the keybinding of the default workspace.
         2
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.floating.criteria"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.floating.criteria"><code class="option">xsession.windowManager.i3.config.floating.criteria</code></a></span></dt><dd><p>List of criteria for windows that should be opened in a floating mode.</p><p><span class="emphasis"><em>Type:</em></span> list of attribute set of stringss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.floating.criteria"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.floating.criteria"><code class="option">xsession.windowManager.i3.config.floating.criteria</code></a></span></dt><dd><p>List of criteria for windows that should be opened in a floating mode.</p><p><span class="emphasis"><em>Type:</em></span> list of attribute set of string or booleanss</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         
         [
         
@@ -14469,13 +14559,15 @@ See <code class="option">for_window</code> i3wm option documentation.
         "border pixel 1"
       </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.window.commands._.criteria"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.window.commands._.criteria"><code class="option">xsession.windowManager.i3.config.window.commands.*.criteria</code></a></span></dt><dd><p>Criteria of the windows on which command should be executed.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of strings</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
-        
-        {
-        title = "x200: ~/work"; 
-        }
-    
-      </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.window.commands._.criteria"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.window.commands._.criteria"><code class="option">xsession.windowManager.i3.config.window.commands.*.criteria</code></a></span></dt><dd><p>Criteria of the windows on which command should be executed.
+</p><p>
+A value of <code class="literal">true</code> is equivalent to using an empty
+criteria (which is different from an empty string criteria).
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of string or booleans</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  title = "x200: ~/work";
+  floating = true;
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/i3.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/i3.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.i3.config.window.hideEdgeBorders"></a><a class="term" href="options.html#opt-xsession.windowManager.i3.config.window.hideEdgeBorders"><code class="option">xsession.windowManager.i3.config.window.hideEdgeBorders</code></a></span></dt><dd><p>Hide window borders adjacent to the screen edges.</p><p><span class="emphasis"><em>Type:</em></span> one of "none", "vertical", "horizontal", "both", "smart"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         "none"
