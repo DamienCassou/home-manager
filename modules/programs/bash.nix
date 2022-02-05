@@ -9,7 +9,7 @@ let
   writeBashScript = name: text: pkgs.writeTextFile {
     inherit name text;
     checkPhase = ''
-      ${pkgs.stdenv.shellDryRun} "$target"
+      ${pkgs.stdenv.shell} -n $out
     '';
   };
 
