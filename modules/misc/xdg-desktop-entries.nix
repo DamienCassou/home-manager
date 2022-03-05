@@ -4,12 +4,8 @@ with lib;
 
 let
   desktopEntry = {
-    imports = [
-      (mkRemovedOptionModule [ "extraConfig" ]
-        "The `extraConfig` option of `xdg.desktopEntries` has been removed following a change in Nixpkgs.")
-    ];
     options = {
-      # Since this module uses the nixpkgs/pkgs/build-support/make-desktopitem function,
+      # Since this module uses the nixpkgs/pkgs/build-support/make-desktopitem function, 
       # our options and defaults follow its parameters, with the following exceptions:
 
       # `desktopName` on makeDesktopItem is controlled by `name`.
@@ -17,10 +13,14 @@ let
       # `name` on makeDesktopItem is controlled by this module's key in the attrset.
       # This is the file's filename excluding ".desktop".
 
-      # `extraConfig` on makeDesktopItem is controlled by `settings`,
+      # `extraEntries` on makeDesktopItem is controlled by `extraConfig`,
+      # and `extraDesktopEntries` by `settings`,
       # to match what's commonly used by other home manager modules.
 
-      # Descriptions are taken from the desktop entry spec:
+      # `mimeType` and `categories` on makeDesktopItem ask for a string in the format "one;two;three;",
+      # for usability's sake we ask for a list of strings.
+
+      # Descriptions are taken from the desktop entry spec: 
       # https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys
 
       type = mkOption {
@@ -31,7 +31,7 @@ let
 
       exec = mkOption {
         description = "Program to execute, possibly with arguments.";
-        type = types.nullOr types.str;
+        type = types.str;
       };
 
       icon = mkOption {
@@ -78,9 +78,9 @@ let
 
       startupNotify = mkOption {
         description = ''
-          If true, it is KNOWN that the application will send a "remove"
-          message when started with the <literal>DESKTOP_STARTUP_ID</literal>
-          environment variable set. If false, it is KNOWN that the application
+          If true, it is KNOWN that the application will send a "remove" 
+          message when started with the <literal>DESKTOP_STARTUP_ID</literal> 
+          environment variable set. If false, it is KNOWN that the application 
           does not work with startup notification at all.'';
         type = types.nullOr types.bool;
         default = null;
@@ -103,10 +103,19 @@ let
         default = null;
       };
 
+      extraConfig = mkOption {
+        description = ''
+          Extra configuration. Will be appended to the end of the file and 
+          may thus contain extra sections.
+        '';
+        type = types.lines;
+        default = "";
+      };
+
       settings = mkOption {
         type = types.attrsOf types.string;
         description = ''
-          Extra key-value pairs to add to the <literal>[Desktop Entry]</literal> section.
+          Extra key-value pairs to add to the <literal>[Desktop Entry]</literal> section. 
           This may override other values.
         '';
         default = { };
@@ -123,19 +132,11 @@ let
         description = "Whether to validate the generated desktop file.";
         default = true;
       };
-
-      # Required for the assertions
-      # TODO: Remove me once `mkRemovedOptionModule` works correctly with submodules
-      assertions = mkOption {
-        type = types.listOf types.unspecified;
-        default = [ ];
-        visible = false;
-        internal = true;
-      };
     };
   };
 
   #formatting helpers
+  ifNotNull = a: a': if a == null then null else a';
   semicolonList = list:
     (concatStringsSep ";" list) + ";"; # requires trailing semicolon
 
@@ -147,9 +148,11 @@ let
         type exec icon comment terminal genericName startupNotify noDisplay
         prefersNonDefaultGPU;
       desktopName = config.name;
-      mimeTypes = optionals (config.mimeType != null) config.mimeType;
-      categories = optionals (config.categories != null) config.categories;
-      extraConfig = config.settings;
+      mimeType = ifNotNull config.mimeType (semicolonList config.mimeType);
+      categories =
+        ifNotNull config.categories (semicolonList config.categories);
+      extraEntries = config.extraConfig;
+      extraDesktopEntries = config.settings;
     };
 in {
   meta.maintainers = [ hm.maintainers.cwyc ];
@@ -179,7 +182,7 @@ in {
   config = mkIf (config.xdg.desktopEntries != { }) {
     assertions = [
       (hm.assertions.assertPlatform "xdg.desktopEntries" pkgs platforms.linux)
-    ] ++ flatten (catAttrs "assertions" (attrValues config.xdg.desktopEntries));
+    ];
 
     home.packages = (map hiPrio # we need hiPrio to override existing entries
       (attrsets.mapAttrsToList makeFile config.xdg.desktopEntries));

@@ -3,4 +3,3 @@ Exec=test --option
 Name=Test
 Terminal=false
 Type=Application
-Version=1.4
