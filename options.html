@@ -3068,6 +3068,30 @@ See <a class="link" href="https://github.com/dandavison/delta" target="_top">htt
         }
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/git.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.git.diff-so-fancy.enable"></a><a class="term" href="options.html#opt-programs.git.diff-so-fancy.enable"><code class="option">programs.git.diff-so-fancy.enable</code></a></span></dt><dd><p>Enable the <span class="command"><strong>diff-so-fancy</strong></span> diff colorizer.
+See <a class="link" href="https://github.com/so-fancy/diff-so-fancy" target="_top">https://github.com/so-fancy/diff-so-fancy</a>.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/git.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.git.diff-so-fancy.changeHunkIndicators"></a><a class="term" href="options.html#opt-programs.git.diff-so-fancy.changeHunkIndicators"><code class="option">programs.git.diff-so-fancy.changeHunkIndicators</code></a></span></dt><dd><p>Simplify git header chunks to a more human readable format.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/git.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.git.diff-so-fancy.markEmptyLines"></a><a class="term" href="options.html#opt-programs.git.diff-so-fancy.markEmptyLines"><code class="option">programs.git.diff-so-fancy.markEmptyLines</code></a></span></dt><dd><p>Whether the first block of an empty line should be colored.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/git.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.git.diff-so-fancy.rulerWidth"></a><a class="term" href="options.html#opt-programs.git.diff-so-fancy.rulerWidth"><code class="option">programs.git.diff-so-fancy.rulerWidth</code></a></span></dt><dd><p>By default, the separator for the file header spans the full
+width of the terminal. Use this setting to set the width of
+the file header manually.
+</p><p><span class="emphasis"><em>Type:</em></span> null or signed integer</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/git.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.git.diff-so-fancy.stripLeadingSymbols"></a><a class="term" href="options.html#opt-programs.git.diff-so-fancy.stripLeadingSymbols"><code class="option">programs.git.diff-so-fancy.stripLeadingSymbols</code></a></span></dt><dd><p>Whether the <code class="literal">+</code> or <code class="literal">-</code> at
+line-start should be removed.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/git.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.git.diff-so-fancy.useUnicodeRuler"></a><a class="term" href="options.html#opt-programs.git.diff-so-fancy.useUnicodeRuler"><code class="option">programs.git.diff-so-fancy.useUnicodeRuler</code></a></span></dt><dd><p>By default, the separator for the file header uses Unicode
+line-drawing characters. If this is causing output errors on
+your terminal, set this to false to use ASCII characters instead.
+</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/git.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.git.difftastic.enable"></a><a class="term" href="options.html#opt-programs.git.difftastic.enable"><code class="option">programs.git.difftastic.enable</code></a></span></dt><dd><p>Enable the <span class="command"><strong>difft</strong></span> syntax highlighter.
 See <a class="link" href="https://github.com/Wilfred/difftastic" target="_top">https://github.com/Wilfred/difftastic</a>.
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git.nix#blob-path" target="_top">
@@ -6777,6 +6801,25 @@ Home Manager will attempt to create this directory.
 <code class="filename">$XDG_CONFIG_HOME/task/taskrc</code>.
 </p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/taskwarrior.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/taskwarrior.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.tealdeer.enable"></a><a class="term" href="options.html#opt-programs.tealdeer.enable"><code class="option">programs.tealdeer.enable</code></a></span></dt><dd><p>Whether to enable Tealdeer.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/tealdeer.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/tealdeer.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.tealdeer.settings"></a><a class="term" href="options.html#opt-programs.tealdeer.settings"><code class="option">programs.tealdeer.settings</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/tealdeer/config.toml</code> on Linux or
+<code class="filename">$HOME/Library/Application Support/tealdeer/config.toml</code>
+on Darwin. See
+<a class="link" href="https://dbrgn.github.io/tealdeer/config.html" target="_top">https://dbrgn.github.io/tealdeer/config.html</a>
+for more information.
+</p><p><span class="emphasis"><em>Type:</em></span> TOML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">{ }</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+  display = {
+    compact = false;
+    use_pager = true;
+  };
+  updates = {
+    auto_update = false;
+  };
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/tealdeer.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/tealdeer.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.terminator.enable"></a><a class="term" href="options.html#opt-programs.terminator.enable"><code class="option">programs.terminator.enable</code></a></span></dt><dd><p>Whether to enable terminator, a tiling terminal emulator.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/terminator.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/terminator.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.terminator.package"></a><a class="term" href="options.html#opt-programs.terminator.package"><code class="option">programs.terminator.package</code></a></span></dt><dd><p>terminator package to install.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of terminator-2.1.1)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.terminator</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/terminator.nix#blob-path" target="_top">
@@ -8115,6 +8158,8 @@ editor using the <code class="envar">EDITOR</code> environment variable.
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/emacs.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/emacs.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.emacs.socketActivation.enable"></a><a class="term" href="options.html#opt-services.emacs.socketActivation.enable"><code class="option">services.emacs.socketActivation.enable</code></a></span></dt><dd><p>Whether to enable systemd socket activation for the Emacs service.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/emacs.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/emacs.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.emacs.startWithUserSession"></a><a class="term" href="options.html#opt-services.emacs.startWithUserSession"><code class="option">services.emacs.startWithUserSession</code></a></span></dt><dd><p>Whether to launch Emacs service with the systemd user session. The default value is <code class="literal">false</code> if <code class="literal">cfg.socketActivation.enable</code> is <code class="literal">true</code>, <code class="literal">true</code> otherwise.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/emacs.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/emacs.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.espanso.enable"></a><a class="term" href="options.html#opt-services.espanso.enable"><code class="option">services.espanso.enable</code></a></span></dt><dd><p>Whether to enable Espanso: cross platform text expander in Rust.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/espanso.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/espanso.nix&gt;
@@ -10018,6 +10063,53 @@ If false just the exec scripts are run.
                     &lt;home-manager/modules/services/xsuspender.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.xsuspender.rules._name_.suspendSubtreePattern"></a><a class="term" href="options.html#opt-services.xsuspender.rules._name_.suspendSubtreePattern"><code class="option">services.xsuspender.rules.&lt;name&gt;.suspendSubtreePattern</code></a></span></dt><dd><p>Also suspend descendant processes that match this regex.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/xsuspender.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/xsuspender.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-specialization"></a><a class="term" href="options.html#opt-specialization"><code class="option">specialization</code></a></span></dt><dd><p>A set of named specialized configurations. These can be used to extend
+your base configuration with additional settings. For example, you can
+have specializations named <span class="quote">“<span class="quote">light</span>”</span> and <span class="quote">“<span class="quote">dark</span>”</span>
+that applies light and dark color theme configurations.
+
+</p><p>
+
+Note, this is an experimental option for now and you therefore have to
+activate the specialization by looking up and running the activation
+script yourself. Note, running the activation script will create a new
+Home Manager generation.
+
+</p><p>
+
+For example, to activate the <span class="quote">“<span class="quote">dark</span>”</span> specialization. You can
+first look up your current Home Manager generation by running
+
+</p><pre class="programlisting console">
+  $ home-manager generations | head -1
+  2022-05-02 22:49 : id 1758 -&gt; /nix/store/jy…ac-home-manager-generation
+</pre><p>
+
+then run
+
+</p><pre class="programlisting console">
+  $ /nix/store/jy…ac-home-manager-generation/specialization/dark/activate
+  Starting Home Manager activation
+  …
+</pre><p>
+
+</p><p>
+
+WARNING! Since this option is experimental, the activation process may
+change in backwards incompatible ways.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of submodules</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/specialization.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/specialization.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-specialization._name_.configuration"></a><a class="term" href="options.html#opt-specialization._name_.configuration"><code class="option">specialization.&lt;name&gt;.configuration</code></a></span></dt><dd><p>Arbitrary Home Manager configuration settings.
+</p><p><span class="emphasis"><em>Type:</em></span> submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/misc/specialization.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/misc/specialization.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-systemd.user.automounts"></a><a class="term" href="options.html#opt-systemd.user.automounts"><code class="option">systemd.user.automounts</code></a></span></dt><dd><p>Definition of systemd per-user automount units. Attributes are
 merged recursively.
 </p><p>
