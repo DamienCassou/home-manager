@@ -5775,7 +5775,7 @@ exclusion.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nushell.configFile"></a><a class="term" href="options.html#opt-programs.nushell.configFile"><code class="option">programs.nushell.configFile</code></a></span></dt><dd><p>The configuration file to be used for nushell.
 </p><p>
 See <a class="link" href="https://www.nushell.sh/book/configuration.html#configuration" target="_top">https://www.nushell.sh/book/configuration.html#configuration</a> for more information.
-</p><p><span class="emphasis"><em>Type:</em></span> submodule</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{ text = ''
+</p><p><span class="emphasis"><em>Type:</em></span> null or submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{ text = ''
     let $config = {
       filesize_metric: false
       table_mode: rounded
@@ -5795,7 +5795,7 @@ If unset then the source option will be preferred.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.nushell.envFile"></a><a class="term" href="options.html#opt-programs.nushell.envFile"><code class="option">programs.nushell.envFile</code></a></span></dt><dd><p>The environment variables file to be used for nushell.
 </p><p>
 See <a class="link" href="https://www.nushell.sh/book/configuration.html#configuration" target="_top">https://www.nushell.sh/book/configuration.html#configuration</a> for more information.
-</p><p><span class="emphasis"><em>Type:</em></span> submodule</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
+</p><p><span class="emphasis"><em>Type:</em></span> null or submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">''
 let-env FOO = 'BAR'
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/nushell.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/nushell.nix&gt;
@@ -8562,21 +8562,17 @@ for an example configuration.
                     &lt;home-manager/modules/services/fusuma.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.fusuma.settings"></a><a class="term" href="options.html#opt-services.fusuma.settings"><code class="option">services.fusuma.settings</code></a></span></dt><dd><p>YAML config that will override the default fusuma configuration.
 </p><p><span class="emphasis"><em>Type:</em></span> YAML value</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
-  enable = true;
-  extraPackages = with pkgs;[ xdotool ];
-  config = {
-    threshold = {
-      swipe = 0.1;
-    };
-    interval = {
-      swipe = 0.7;
-    };
-    swipe = {
-      "3" = {
-        left = {
-          # GNOME: Switch to left workspace
-          command = "xdotool key ctrl+alt+Right";
-        };
+  threshold = {
+    swipe = 0.1;
+  };
+  interval = {
+    swipe = 0.7;
+  };
+  swipe = {
+    "3" = {
+      left = {
+        # GNOME: Switch to left workspace
+        command = "xdotool key ctrl+alt+Right";
       };
     };
   };
@@ -11354,6 +11350,9 @@ will override the default type values of swaynag.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.systemdIntegration"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.systemdIntegration"><code class="option">wayland.windowManager.sway.systemdIntegration</code></a></span></dt><dd><p>Whether to enable <code class="filename">sway-session.target</code> on
 sway startup. This links to
 <code class="filename">graphical-session.target</code>.
+Some important environment variables will be imported to systemd
+and dbus user environment before reaching the target, including
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="literal">DISPLAY</code></p></li><li class="listitem"><p><code class="literal">WAYLAND_DISPLAY</code></p></li><li class="listitem"><p><code class="literal">SWAYSOCK</code></p></li><li class="listitem"><p><code class="literal">XDG_CURRENT_DESKTOP</code></p></li></ul></div><p>
 </p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/i3-sway/sway.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/i3-sway/sway.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-wayland.windowManager.sway.wrapperFeatures"></a><a class="term" href="options.html#opt-wayland.windowManager.sway.wrapperFeatures"><code class="option">wayland.windowManager.sway.wrapperFeatures</code></a></span></dt><dd><p>Attribute set of features to enable in the wrapper.
@@ -11766,7 +11765,7 @@ bspc subscribe all &gt; ~/bspc-report.log &amp;
         }
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
-                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.rules"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.rules"><code class="option">xsession.windowManager.bspwm.rules</code></a></span></dt><dd><p>Rule configuration. The keys of the attribute set are the targets of the rules.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of submodule</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.rules"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.rules"><code class="option">xsession.windowManager.bspwm.rules</code></a></span></dt><dd><p>Rule configuration. The keys of the attribute set are the targets of the rules.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of boolean or signed integer or floating point number or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         {
         
         }
@@ -11817,6 +11816,8 @@ e.g. screenshot tools.
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.rules._name_.private"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.rules._name_.private"><code class="option">xsession.windowManager.bspwm.rules.&lt;name&gt;.private</code></a></span></dt><dd><p>Whether the node should stay in the same tiling position and size.
 </p><p><span class="emphasis"><em>Type:</em></span> null or boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.rules._name_.rectangle"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.rules._name_.rectangle"><code class="option">xsession.windowManager.bspwm.rules.&lt;name&gt;.rectangle</code></a></span></dt><dd><p>The node's geometry, in the format <code class="literal">WxH+X+Y</code>.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">"800x600+32+32"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-xsession.windowManager.bspwm.rules._name_.splitDir"></a><a class="term" href="options.html#opt-xsession.windowManager.bspwm.rules._name_.splitDir"><code class="option">xsession.windowManager.bspwm.rules.&lt;name&gt;.splitDir</code></a></span></dt><dd><p>The direction where the container is going to be split.</p><p><span class="emphasis"><em>Type:</em></span> null or one of "north", "west", "south", "east"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">"south"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/bspwm/default.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/window-managers/bspwm/default.nix&gt;
