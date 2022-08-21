@@ -82,10 +82,46 @@ For NixOS, the default value for this option includes at least this argument:
                     &lt;home-manager/modules/programs/astroid.nix&gt;
                 </a></code></td></tr><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/alot.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/alot.nix&gt;
+                </a></code></td></tr><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
                 </a></code></td></tr><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/accounts/email.nix#blob-path" target="_top">
                     &lt;home-manager/modules/accounts/email.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.address"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.address"><code class="option">accounts.email.accounts.&lt;name&gt;.address</code></a></span></dt><dd><p>The email address of this account.</p><p><span class="emphasis"><em>Type:</em></span> string matching the pattern .*@.*</p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">"jane.doe@example.org"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/accounts/email.nix#blob-path" target="_top">
                     &lt;home-manager/modules/accounts/email.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.aerc.enable"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.aerc.enable"><code class="option">accounts.email.accounts.&lt;name&gt;.aerc.enable</code></a></span></dt><dd><p>Whether to enable aerc.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.aerc.extraAccounts"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.aerc.extraAccounts"><code class="option">accounts.email.accounts.&lt;name&gt;.aerc.extraAccounts</code></a></span></dt><dd><p>Extra config added to the configuration of this account in
+<code class="filename">$HOME/.config/aerc/accounts.conf</code>.
+See aerc-config(5).
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of values (null, bool, int, string of float) or a list of values, that will be joined with a comma</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">{ source = "maildir://~/Maildir/example"; }</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.aerc.extraBinds"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.aerc.extraBinds"><code class="option">accounts.email.accounts.&lt;name&gt;.aerc.extraBinds</code></a></span></dt><dd><p>Extra bindings specific to this account, added to
+<code class="filename">$HOME/.config/aerc/accounts.conf</code>.
+See aerc-config(5).
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of values (null, bool, int, string of float) or a list of values, that will be joined with a comma</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">{ messages = { d = ":move ${folder.trash}&lt;Enter&gt;"; }; }</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.aerc.extraConfig"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.aerc.extraConfig"><code class="option">accounts.email.accounts.&lt;name&gt;.aerc.extraConfig</code></a></span></dt><dd><p>Extra config specific to this account, added to
+<code class="filename">$HOME/.config/aerc/aerc.conf</code>.
+See aerc-config(5).
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of values (null, bool, int, string of float) or a list of values, that will be joined with a comma</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">{ ui = { sidebar-width = 42; }; }</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.aerc.smtpAuth"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.aerc.smtpAuth"><code class="option">accounts.email.accounts.&lt;name&gt;.aerc.smtpAuth</code></a></span></dt><dd><p>Sets the authentication mechanism if smtp is used as the outgoing
+method.
+See aerc-smtp(5).
+</p><p><span class="emphasis"><em>Type:</em></span> null or one of "none", "plain", "login"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"plain"</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">"auth"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-accounts.email.accounts._name_.aliases"></a><a class="term" href="options.html#opt-accounts.email.accounts._name_.aliases"><code class="option">accounts.email.accounts.&lt;name&gt;.aliases</code></a></span></dt><dd><p>Alternative email addresses of this account.</p><p><span class="emphasis"><em>Type:</em></span> list of string matching the pattern .*@.*</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         [
         
@@ -1934,6 +1970,51 @@ view CONTACT = name, email
 set autosave=true
 ''</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/abook.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/abook.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.aerc.enable"></a><a class="term" href="options.html#opt-programs.aerc.enable"><code class="option">programs.aerc.enable</code></a></span></dt><dd><p>Whether to enable aerc.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.aerc.extraAccounts"></a><a class="term" href="options.html#opt-programs.aerc.extraAccounts"><code class="option">programs.aerc.extraAccounts</code></a></span></dt><dd><p>Extra lines added to <code class="filename">$HOME/.config/aerc/accounts.conf</code>.
+See aerc-config(5).
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n" or attribute set of attribute set of values (null, bool, int, string of float) or a list of values, that will be joined with a comma</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">{ Work = { source = "maildir://~/Maildir/work"; }; }</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.aerc.extraBinds"></a><a class="term" href="options.html#opt-programs.aerc.extraBinds"><code class="option">programs.aerc.extraBinds</code></a></span></dt><dd><p>Extra lines added to <code class="filename">$HOME/.config/aerc/binds.conf</code>.
+Global keybindings can be set in the `global` section.
+See aerc-config(5).
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n" or attribute set of attribute set of values (null, bool, int, string of float) or a list of values, that will be joined with a comma</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">{ messages = { q = ":quit&lt;Enter&gt;"; }; }</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.aerc.extraConfig"></a><a class="term" href="options.html#opt-programs.aerc.extraConfig"><code class="option">programs.aerc.extraConfig</code></a></span></dt><dd><p>Extra lines added to <code class="filename">$HOME/.config/aerc/aerc.conf</code>.
+See aerc-config(5).
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n" or attribute set of attribute set of values (null, bool, int, string of float) or a list of values, that will be joined with a comma</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">{ ui = { sort = "-r date"; }; }</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.aerc.stylesets"></a><a class="term" href="options.html#opt-programs.aerc.stylesets"><code class="option">programs.aerc.stylesets</code></a></span></dt><dd><p>Stylesets added to <code class="filename">$HOME/.config/aerc/stylesets/</code>.
+See aerc-stylesets(7).
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of attribute set of values (null, bool, int, string of float) or a list of values, that will be joined with a comma or strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{ default = { ui = { "tab.selected.reverse" = toggle; }; }; };
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.aerc.templates"></a><a class="term" href="options.html#opt-programs.aerc.templates"><code class="option">programs.aerc.templates</code></a></span></dt><dd><p>Templates added to <code class="filename">$HOME/.config/aerc/templates/</code>.
+See aerc-templates(7).
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{ new_message = "Hello!"; };
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/aerc.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/aerc.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.afew.enable"></a><a class="term" href="options.html#opt-programs.afew.enable"><code class="option">programs.afew.enable</code></a></span></dt><dd><p>Whether to enable the afew initial tagging script for Notmuch.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/afew.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/afew.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.afew.extraConfig"></a><a class="term" href="options.html#opt-programs.afew.extraConfig"><code class="option">programs.afew.extraConfig</code></a></span></dt><dd><p>Extra lines added to afew configuration file. Available
@@ -2417,6 +2498,14 @@ this option) to command strings or directly to build outputs.
         ]
     </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/bash.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/bash.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.bashmount.enable"></a><a class="term" href="options.html#opt-programs.bashmount.enable"><code class="option">programs.bashmount.enable</code></a></span></dt><dd><p>Whether to enable bashmount.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/bashmount.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/bashmount.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.bashmount.extraConfig"></a><a class="term" href="options.html#opt-programs.bashmount.extraConfig"><code class="option">programs.bashmount.extraConfig</code></a></span></dt><dd><p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/bashmount/config</code>. Look at
+<a class="link" href="https://github.com/jamielinux/bashmount/blob/master/bashmount.conf" target="_top">https://github.com/jamielinux/bashmount/blob/master/bashmount.conf</a>
+for explanation about possible values.
+</p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/bashmount.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/bashmount.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.bat.enable"></a><a class="term" href="options.html#opt-programs.bat.enable"><code class="option">programs.bat.enable</code></a></span></dt><dd><p>Whether to enable bat, a cat clone with wings.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/bat.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/bat.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.bat.config"></a><a class="term" href="options.html#opt-programs.bat.config"><code class="option">programs.bat.config</code></a></span></dt><dd><p>Bat configuration.
@@ -3177,6 +3266,13 @@ See <span class="command"><strong>fzf-tmux --help</strong></span> for available 
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gh.enableGitCredentialHelper"></a><a class="term" href="options.html#opt-programs.gh.enableGitCredentialHelper"><code class="option">programs.gh.enableGitCredentialHelper</code></a></span></dt><dd><p>Whether to enable the gh git credential helper for github.com.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gh.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gh.package"></a><a class="term" href="options.html#opt-programs.gh.package"><code class="option">programs.gh.package</code></a></span></dt><dd><p>Package providing <span class="command"><strong>gh</strong></span>.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">pkgs.gh</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gh.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/gh.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gh.extensions"></a><a class="term" href="options.html#opt-programs.gh.extensions"><code class="option">programs.gh.extensions</code></a></span></dt><dd><p>gh extensions, see <a class="link" href="https://cli.github.com/manual/gh_extension" target="_top">https://cli.github.com/manual/gh_extension</a>.
+</p><p><span class="emphasis"><em>Type:</em></span> list of package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        [
+        
+        ]
+    </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">[ pkgs.gh-eco ]</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gh.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gh.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gh.settings"></a><a class="term" href="options.html#opt-programs.gh.settings"><code class="option">programs.gh.settings</code></a></span></dt><dd><p>Configuration written to <code class="filename">$XDG_CONFIG_HOME/gh/config.yml</code>.</p><p><span class="emphasis"><em>Type:</em></span> YAML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
         {
@@ -6411,7 +6507,7 @@ now.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.enable"></a><a class="term" href="options.html#opt-programs.rofi.enable"><code class="option">programs.rofi.enable</code></a></span></dt><dd><p>Whether to enable Rofi: A window switcher, application launcher and dmenu replacement.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.package"></a><a class="term" href="options.html#opt-programs.rofi.package"><code class="option">programs.rofi.package</code></a></span></dt><dd><p>Package providing the <span class="command"><strong>rofi</strong></span> binary.
-</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of rofi-1.7.3)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.rofi.override { plugins = [ pkgs.rofi-emoji ]; };
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of rofi-1.7.4)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">pkgs.rofi.override { plugins = [ pkgs.rofi-emoji ]; };
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/rofi.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.rofi.configPath"></a><a class="term" href="options.html#opt-programs.rofi.configPath"><code class="option">programs.rofi.configPath</code></a></span></dt><dd><p>Path where to put generated configuration file.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"$XDG_CONFIG_HOME/rofi/config.rasi"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rofi.nix#blob-path" target="_top">
@@ -7516,7 +7612,7 @@ manually set any options not listed above.
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.enable"></a><a class="term" href="options.html#opt-programs.vscode.enable"><code class="option">programs.vscode.enable</code></a></span></dt><dd><p>Whether to enable Visual Studio Code.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.package"></a><a class="term" href="options.html#opt-programs.vscode.package"><code class="option">programs.vscode.package</code></a></span></dt><dd><p>Version of Visual Studio Code to install.
-</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of vscode-1.70.0)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.vscodium</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
+</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal"><em class="replaceable"><code>(build of vscode-1.70.2)</code></em></code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">pkgs.vscodium</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/vscode.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.vscode.extensions"></a><a class="term" href="options.html#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code></a></span></dt><dd><p>The extensions Visual Studio Code should be started with.
 </p><p><span class="emphasis"><em>Type:</em></span> list of package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
@@ -7715,6 +7811,34 @@ otherwise the service may never be started.
                     &lt;home-manager/modules/programs/wezterm.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.wezterm.package"></a><a class="term" href="options.html#opt-programs.wezterm.package"><code class="option">programs.wezterm.package</code></a></span></dt><dd><p>The Wezterm package to install.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">pkgs.wezterm</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/wezterm.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/wezterm.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.wezterm.colorSchemes"></a><a class="term" href="options.html#opt-programs.wezterm.colorSchemes"><code class="option">programs.wezterm.colorSchemes</code></a></span></dt><dd><p>Attribute set of additional color schemes to be written to
+<code class="filename">$XDG_CONFIG_HOME/wezterm/colors</code>, where each key is
+taken as the name of the corresponding color scheme. See
+<a class="link" href="https://wezfurlong.org/wezterm/config/appearance.html#defining-a-color-scheme-in-a-separate-file" target="_top">https://wezfurlong.org/wezterm/config/appearance.html#defining-a-color-scheme-in-a-separate-file</a>
+for more details of the TOML color scheme format.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of TOML value</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">myCoolTheme = {
+  ansi = [
+    "#222222" "#D14949" "#48874F" "#AFA75A"
+    "#599797" "#8F6089" "#5C9FA8" "#8C8C8C"
+  ];
+  brights = [
+    "#444444" "#FF6D6D" "#89FF95" "#FFF484"
+    "#97DDFF" "#FDAAF2" "#85F5DA" "#E9E9E9"
+  ];
+  background = "#1B1B1B";
+  cursor_bg = "#BEAF8A";
+  cursor_border = "#BEAF8A";
+  cursor_fg = "#1B1B1B";
+  foreground = "#BEAF8A";
+  selection_bg = "#444444";
+  selection_fg = "#E9E9E9";
+};
+</pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/wezterm.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/wezterm.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.wezterm.extraConfig"></a><a class="term" href="options.html#opt-programs.wezterm.extraConfig"><code class="option">programs.wezterm.extraConfig</code></a></span></dt><dd><p>Extra configuration written to
 <code class="filename">$XDG_CONFIG_HOME/wezterm/wezterm.lua</code>. See
 <a class="link" href="https://wezfurlong.org/wezterm/config/files.html" target="_top">https://wezfurlong.org/wezterm/config/files.html</a>
@@ -7800,6 +7924,20 @@ focused on keyboard interaction.</p><p><span class="emphasis"><em>Type:</em></sp
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zathura.extraConfig"></a><a class="term" href="options.html#opt-programs.zathura.extraConfig"><code class="option">programs.zathura.extraConfig</code></a></span></dt><dd><p>Additional commands for zathura that will be added to the
 <code class="filename">zathurarc</code> file.
 </p><p><span class="emphasis"><em>Type:</em></span> strings concatenated with "\n"</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">""</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zathura.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/programs/zathura.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zathura.mappings"></a><a class="term" href="options.html#opt-programs.zathura.mappings"><code class="option">programs.zathura.mappings</code></a></span></dt><dd><p>Add <code class="option">:map</code> mappings to zathura and make
+them permanent. See
+<span class="citerefentry"><span class="refentrytitle">zathurarc</span>(5)</span>
+for the full list of possible mappings.
+</p><p><span class="emphasis"><em>Type:</em></span> attribute set of string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">
+        {
+        
+        }
+    </code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">
+        {
+        &lt;Right&gt; = "navigate next"; D = "toggle_page_mode"; 
+        }
+    </code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zathura.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/zathura.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.zathura.options"></a><a class="term" href="options.html#opt-programs.zathura.options"><code class="option">programs.zathura.options</code></a></span></dt><dd><p>Add <code class="option">:set</code> command options to zathura and make
 them permanent. See
