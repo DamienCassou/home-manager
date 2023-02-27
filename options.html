@@ -2924,15 +2924,19 @@ See <a class="link" href="https://www.gnupg.org/gph/en/manual/x334.html" target=
 for more.</p><p><span class="emphasis"><em>Type:</em></span> null or one of "unknown", 1, "never", 2, "marginal", 3, "full", 4, "ultimate", 5</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gpg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gpg.scdaemonSettings"></a><a class="term" href="options.html#opt-programs.gpg.scdaemonSettings"><code class="option">programs.gpg.scdaemonSettings</code></a></span></dt><dd><p>SCdaemon configuration options. Available options are described
-in the gpg scdaemon manpage:
-<a class="link" href="https://www.gnupg.org/documentation/manuals/gnupg/Scdaemon-Options.html" target="_top">https://www.gnupg.org/documentation/manuals/gnupg/Scdaemon-Options.html</a>.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of (string or boolean or list of string)</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
+in
+<a class="link" href="https://www.gnupg.org/documentation/manuals/gnupg/Scdaemon-Options.html" target="_top">
+  <span class="citerefentry"><span class="refentrytitle">scdaemon</span>(1)</span>
+</a>.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of (string or boolean or list of string)</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
   disable-ccid = true;
 }
 </pre><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/programs/gpg.nix#blob-path" target="_top">
                     &lt;home-manager/modules/programs/gpg.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-programs.gpg.settings"></a><a class="term" href="options.html#opt-programs.gpg.settings"><code class="option">programs.gpg.settings</code></a></span></dt><dd><p>GnuPG configuration options. Available options are described
-in the gpg manpage:
-<a class="link" href="https://gnupg.org/documentation/manpage.html" target="_top">https://gnupg.org/documentation/manpage.html</a>.
+in
+<a class="link" href="https://gnupg.org/documentation/manpage.html" target="_top">
+  <span class="citerefentry"><span class="refentrytitle">gpg</span>(1)</span>
+</a>.
 </p><p>
 Note that lists are converted to duplicate keys.</p><p><span class="emphasis"><em>Type:</em></span> attribute set of (string or boolean or list of string)</p><p><span class="emphasis"><em>Example:</em></span> </p><pre class="programlisting">{
   no-comments = false;
@@ -7051,6 +7055,16 @@ otherwise the service may never be started.</p><p><span class="emphasis"><em>Typ
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.clipmenu.launcher"></a><a class="term" href="options.html#opt-services.clipmenu.launcher"><code class="option">services.clipmenu.launcher</code></a></span></dt><dd><p>Launcher command, if not set, <span class="command"><strong>dmenu</strong></span>
 will be used by default.</p><p><span class="emphasis"><em>Type:</em></span> null or string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">null</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">"rofi"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipmenu.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/clipmenu.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.copyq.enable"></a><a class="term" href="options.html#opt-services.copyq.enable"><code class="option">services.copyq.enable</code></a></span></dt><dd><p>Whether to enable copyq, a clipboard manager with advanced features .</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/copyq.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/copyq.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.copyq.package"></a><a class="term" href="options.html#opt-services.copyq.package"><code class="option">services.copyq.package</code></a></span></dt><dd><p>The copyq package to use.</p><p><span class="emphasis"><em>Type:</em></span> package</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">pkgs.copyq</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/copyq.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/copyq.nix&gt;
+                </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.copyq.systemdTarget"></a><a class="term" href="options.html#opt-services.copyq.systemdTarget"><code class="option">services.copyq.systemdTarget</code></a></span></dt><dd><p>The systemd target that will automatically start the Waybar service.
+</p><p>
+When setting this value to <code class="literal">"sway-session.target"</code>,
+make sure to also enable <code class="option">wayland.windowManager.sway.systemdIntegration</code>,
+otherwise the service may never be started.</p><p><span class="emphasis"><em>Type:</em></span> string</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">"graphical-session.target"</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">"sway-session.target"</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/copyq.nix#blob-path" target="_top">
+                    &lt;home-manager/modules/services/copyq.nix&gt;
                 </a></code></td></tr></table></dd><dt><span class="term"><a id="opt-services.devilspie2.enable"></a><a class="term" href="options.html#opt-services.devilspie2.enable"><code class="option">services.devilspie2.enable</code></a></span></dt><dd><p>Whether to enable Devilspie2, a window matching utility, allowing the user to
 perform scripted actions on windows as they are created.</p><p><span class="emphasis"><em>Type:</em></span> boolean</p><p><span class="emphasis"><em>Default:</em></span> <code class="literal">false</code></p><p><span class="emphasis"><em>Example:</em></span> <code class="literal">true</code></p><p><span class="emphasis"><em>Declared by:</em></span></p><table border="0" summary="Simple list" class="simplelist"><tr><td><code class="filename"><a class="filename" href="https://github.com/nix-community/home-manager/blob/master/modules/services/devilspie2.nix#blob-path" target="_top">
                     &lt;home-manager/modules/services/devilspie2.nix&gt;
