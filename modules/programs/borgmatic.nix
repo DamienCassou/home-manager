@@ -43,10 +43,7 @@ let
     };
   };
 
-  configModule = types.submodule ({ config, ... }: {
-    config.location.extraConfig.exclude_from =
-      mkIf config.location.excludeHomeManagerSymlinks
-      (mkAfter [ (toString hmExcludeFile) ]);
+  configModule = types.submodule {
     options = {
       location = {
         sourceDirectories = mkOption {
@@ -135,7 +132,7 @@ let
         extraConfig = extraConfigOption;
       };
     };
-  });
+  };
 
   removeNullValues = attrSet: filterAttrs (key: value: value != null) attrSet;
 
@@ -146,13 +143,20 @@ let
   '';
   hmExcludePatterns = lib.concatMapStrings hmExcludePattern hmSymlinks;
   hmExcludeFile = pkgs.writeText "hm-symlinks.txt" hmExcludePatterns;
+  hmSymlinksExclusions = config:
+    lib.optionalAttrs config.location.excludeHomeManagerSymlinks {
+      exclude_from =
+        (lib.optionals (config.location.extraConfig ? "exclude_from")
+          config.location.extraConfig.exclude_from)
+        ++ [ (toString hmExcludeFile) ];
+    };
 
   writeConfig = config:
     generators.toYAML { } {
       location = removeNullValues {
         source_directories = config.location.sourceDirectories;
         repositories = config.location.repositories;
-      } // config.location.extraConfig;
+      } // config.location.extraConfig // (hmSymlinksExclusions config);
       storage = removeNullValues {
         encryption_passcommand = config.storage.encryptionPasscommand;
       } // config.storage.extraConfig;
