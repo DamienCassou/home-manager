@@ -76,10 +76,35 @@ let
       (mkAfter [ (toString hmExcludeFile) ]);
     options = {
       location = {
-        sourceDirectories = mkOption {
+        sourceDirectories = mkNullableOption {
           type = types.listOf types.str;
-          description = "Directories to backup.";
+          default = null;
+          description = ''
+            Directories to backup.
+
+            Mutually exclusive with [](#opt-programs.borgmatic.backups._name_.location.patterns).
+          '';
           example = literalExpression "[config.home.homeDirectory]";
+        };
+
+        patterns = mkNullableOption {
+          type = types.listOf types.str;
+          default = null;
+          description = ''
+            Patterns to include/exclude.
+
+            See the output of `borg help patterns` for the syntax. Mutually exclusive with [](#opt-programs.borgmatic.backups._name_.location.sourceDirectories).
+          '';
+          example = literalExpression ''
+            [
+              "R /home/user"
+              "- .cache"
+              "+ .config"
+              "- Downloads"
+              "- Videos"
+              "+ Videos/Important Video"
+            ]
+          '';
         };
 
         repositories = mkOption {
@@ -193,7 +218,11 @@ let
 
   writeConfig = config:
     generators.toYAML { } (removeNullValues ({
-      source_directories = config.location.sourceDirectories;
+      source_directories = if (config.location.patterns == null) then
+        config.location.sourceDirectories
+      else
+        null;
+      patterns = config.location.patterns;
       repositories = config.location.repositories;
       encryption_passcommand = config.storage.encryptionPasscommand;
       keep_within = config.retention.keepWithin;
