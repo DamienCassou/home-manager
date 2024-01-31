@@ -4,4 +4,6 @@
   borgmatic-program-exclude-hm-symlinks = ./exclude-hm-symlinks.nix;
   borgmatic-program-exclude-hm-symlinks-nothing-else =
     ./exclude-hm-symlinks-nothing-else.nix;
+  borgmatic-program-no-both-sourceDirectories-and-patterns =
+    ./borgmatic-program-no-both-sourceDirectories-and-patterns.nix;
 }

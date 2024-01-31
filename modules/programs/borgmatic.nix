@@ -218,11 +218,7 @@ let
 
   writeConfig = config:
     generators.toYAML { } (removeNullValues ({
-      source_directories = if (config.location.patterns == null) then
-        config.location.sourceDirectories
-      else
-        null;
-      patterns = config.location.patterns;
+      source_directories = config.location.sourceDirectories;
       repositories = config.location.repositories;
       encryption_passcommand = config.storage.encryptionPasscommand;
       keep_within = config.retention.keepWithin;
@@ -276,7 +272,17 @@ in {
     assertions = [
       (lib.hm.assertions.assertPlatform "programs.borgmatic" pkgs
         lib.platforms.linux)
-    ];
+    ] ++ (let
+      mkNoBothSourceDirectoriesAndPatternsAssertion = name: config: {
+        assertion = config.location.patterns == null
+          || config.location.sourceDirectories == null;
+        message = ''
+          The borgmatic configuration "${name}" can't specify both location.sourceDirectories and location.patterns'';
+      };
+
+    in (mapAttrsToList
+      (name: config: mkNoBothSourceDirectoriesAndPatternsAssertion name config)
+      cfg.backups));
 
     xdg.configFile = with lib.attrsets;
       mapAttrs' (configName: config:
